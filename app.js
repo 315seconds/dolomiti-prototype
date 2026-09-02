@@ -1248,21 +1248,39 @@ function describeWeather(code) {
 }
 
 function buildWeatherAdvice({ code, rainChance, windGust, low }) {
-  const notes = [];
-  if (rainChance >= 50 || [61, 63, 65, 80, 81, 82, 95, 96, 99].includes(code)) {
-    notes.push("방수 자켓");
+  const gear = [];
+  const cautions = [];
+  const rainy = rainChance >= 50 || [51, 53, 55, 61, 63, 65, 80, 81, 82, 95, 96, 99].includes(code);
+  const snowy = [71, 73, 75].includes(code);
+  const thunderstorm = [95, 96, 99].includes(code);
+
+  if (rainy) gear.push("방수 재킷");
+  if (windGust >= 35) gear.push("바람막이");
+  if (low <= 8) gear.push("얇은 보온 레이어");
+
+  if (thunderstorm) {
+    cautions.push("뇌우 가능성이 있어 능선 진입 전 현지 상황을 꼭 확인해 주세요.");
   }
   if (windGust >= 35) {
-    notes.push("바람막이");
-  }
-  if (low <= 8) {
-    notes.push("보온 레이어");
+    cautions.push("능선과 노출 구간에서는 강한 돌풍에 주의해 주세요.");
   }
   if ([45, 48].includes(code)) {
-    notes.push("시야 저하 주의");
+    cautions.push("안개로 시야가 제한될 수 있으니 갈림길과 코스 표식을 주의해서 확인해 주세요.");
   }
-  if (!notes.length) return "기본 트레킹 복장으로 충분하지만 능선 바람은 현장에서 다시 확인하세요.";
-  return `${notes.join(" · ")} 준비를 권장합니다.`;
+  if (snowy) {
+    cautions.push("눈이나 결빙 가능성이 있으니 미끄럼 방지 장비와 현지 통제 여부를 확인해 주세요.");
+  }
+
+  let gearAdvice = "";
+  if (gear.length === 1) {
+    gearAdvice = `${gear[0]}${gear[0] === "방수 재킷" ? "을" : "를"} 챙겨 주세요.`;
+  } else if (gear.length > 1) {
+    gearAdvice = `${gear.slice(0, -1).join(", ")}와 ${gear.at(-1)}를 챙겨 주세요.`;
+  }
+  if (!gearAdvice && !cautions.length) {
+    return "대체로 무난한 날씨지만, 산악 지역은 변화가 빠르니 출발 전 바람과 강수 상황을 한 번 더 확인해 주세요.";
+  }
+  return [gearAdvice, ...cautions].filter(Boolean).join(" ");
 }
 
 function formatNumber(value, digits = 0) {

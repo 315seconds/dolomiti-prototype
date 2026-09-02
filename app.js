@@ -13,6 +13,57 @@ const labels = {
   car: "차량"
 };
 
+const poiPhotos = {
+  koelnerHuette: {
+    src: "assets/poi/day1-koelner-huette.jpg",
+    alt: "로젠가르텐 암벽 아래의 쾰너 산장",
+    author: "Cm95",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    source: "https://commons.wikimedia.org/wiki/File:K%C3%B6lner_H%C3%BCtte_vor_Rosengarten.jpg"
+  },
+  paolinaHuette: {
+    src: "assets/poi/day1-paolina-huette.jpg",
+    alt: "파올리나 산장과 리프트 승강장",
+    author: "Petr1888",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Paolinah%C3%BCtte_in_July_2015_02.jpg"
+  },
+  carezzaLake: {
+    src: "assets/poi/day1-carezza-lake.jpg",
+    alt: "숲과 로젠가르텐 산군이 비치는 카레짜 호수",
+    author: "Linguaddict",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Lago_di_Carezza%3B_Karersee.jpg"
+  },
+  vielDalPan: {
+    src: "assets/poi/day2-viel-dal-pan.jpg",
+    alt: "마르몰라다를 마주 보는 비엘 달 판 산장",
+    author: "Pimlico27",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Marmolada_and_Rifugio_Viel_Dal_Pan.jpg"
+  },
+  passoPordoi: {
+    src: "assets/poi/day2-passo-pordoi.jpg",
+    alt: "포르도이 고개의 사쓰 포르도이 케이블카 하부역",
+    author: "Adert",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Sass_Pordoi_-_funivia.jpg"
+  },
+  sassPordoi: {
+    src: "assets/poi/day2-sass-pordoi.jpg",
+    alt: "사쓰 포르도이 케이블카 상부역과 전망",
+    author: "Z thomas",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Seilbahn_Sass_pordoi_Bergstation_2019-09-03_2.jpg"
+  }
+};
+
 const routeData = [
   {
     id: "rosengarten",
@@ -29,10 +80,10 @@ const routeData = [
     pois: [
       ["Nova Levante", "출발 지점", [46.432267, 11.54574]],
       ["Malga Frommer", "케이블카 하차 · 곤돌라 환승", [46.4433, 11.5894]],
-      ["Kölner Hütte", "곤돌라 상부 · 중식", [46.44233, 11.612015]],
-      ["Paolina", "트레킹 도착 산장", [46.415716, 11.614615]],
+      ["Kölner Hütte", "곤돌라 상부 · 중식", [46.44233, 11.612015], poiPhotos.koelnerHuette],
+      ["Paolina", "트레킹 도착 산장", [46.415716, 11.614615], poiPhotos.paolinaHuette],
       ["Carezza", "리프트 하부/버스 연결", [46.407956, 11.591893]],
-      ["Carezza/Karersee", "호수 산책", [46.40934, 11.57515]]
+      ["Carezza/Karersee", "호수 산책", [46.40934, 11.57515], poiPhotos.carezzaLake]
     ],
     steps: [
       {
@@ -124,9 +175,9 @@ const routeData = [
       ["Alba", "케이블카 출발", [46.457509, 11.788861]],
       ["Col dei Rossi", "케이블카 상부 하차", [46.474546, 11.802258]],
       ["Rifugio Fredarola", "A/B팀 공통 산장", [46.477591, 11.814813]],
-      ["Passo Pordoi", "A팀/B팀 합류 · 케이블카 하부역 · 버스 주차장", [46.488272, 11.810704]],
-      ["Rifugio Viel dal Pan", "B팀 왕복 지점", [46.474215, 11.834069]],
-      ["Sass Pordoi", "전망대 · 자유시간", [46.500312, 11.807728]],
+      ["Passo Pordoi", "A팀/B팀 합류 · 케이블카 하부역 · 버스 주차장", [46.488272, 11.810704], poiPhotos.passoPordoi],
+      ["Rifugio Viel dal Pan", "B팀 왕복 지점", [46.474215, 11.834069], poiPhotos.vielDalPan],
+      ["Sass Pordoi", "전망대 · 자유시간", [46.500312, 11.807728], poiPhotos.sassPordoi],
       ["QC Terme Dolomiti", "온천", [46.4276, 11.6865]],
       ["숙소", "온천 후 복귀", [46.4309, 11.6934]]
     ],
@@ -646,6 +697,7 @@ const poiSection = document.querySelector("#poiSection");
 const poiImage = document.querySelector("#poiImage");
 const poiList = document.querySelector("#poiList");
 const poiToggleButton = document.querySelector("#poiToggleButton");
+const photoCredits = document.querySelector("#photoCredits");
 const mapStepSheet = document.querySelector("#mapStepSheet");
 const mapCurrentStep = document.querySelector("#mapCurrentStep");
 const previousStepButton = document.querySelector("#previousStepButton");
@@ -886,8 +938,12 @@ function renderMap({ focusActiveStep = false } = {}) {
   activeLine?.bringToFront();
 
   getMapPoiIndices(route).forEach((poiIndex, displayIndex) => {
-    const [name, description, coord] = route.pois[poiIndex];
+    const [name, description, coord, photo] = route.pois[poiIndex];
     const mode = pointModeForIndex(route, poiIndex);
+    const popupPhoto = photo ? `
+      <img class="poi-popup-image" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+      <small class="poi-popup-credit">사진: <a href="${photo.source}" target="_blank" rel="noopener">${photo.author}</a> · <a href="${photo.licenseUrl}" target="_blank" rel="noopener">${photo.license}</a></small>
+    ` : "";
     const marker = L.marker(coord, {
       icon: L.divIcon({
         className: "route-marker-hit",
@@ -895,7 +951,7 @@ function renderMap({ focusActiveStep = false } = {}) {
         iconSize: [44, 44],
         iconAnchor: [22, 22]
       })
-    }).bindPopup(`<strong>${name}</strong><span>${description}</span>`).addTo(map);
+    }).bindPopup(`${popupPhoto}<strong>${name}</strong><span>${description}</span>`).addTo(map);
     poiMarkers.push(marker);
     boundsPoints.push(coord);
   });
@@ -1022,6 +1078,7 @@ function renderPois() {
   if (!route.pois.length) {
     poiSection.hidden = true;
     poiToggleButton.hidden = true;
+    photoCredits.hidden = true;
     return;
   }
 
@@ -1036,13 +1093,17 @@ function renderPois() {
   const poiIndices = getMapPoiIndices(route);
   const isExpanded = expandedPoiRoutes.has(route.id);
   poiIndices.forEach((poiIndex, displayIndex) => {
-    const [name, description] = route.pois[poiIndex];
+    const [name, description, , photo] = route.pois[poiIndex];
     const item = document.createElement("div");
     item.className = "poi-item";
+    item.classList.toggle("has-photo", Boolean(photo));
     item.tabIndex = 0;
     item.setAttribute("role", "button");
     item.hidden = !isExpanded && displayIndex >= 6;
-    item.innerHTML = `<strong>${displayIndex + 1}. ${name}</strong><span>${description}</span>`;
+    item.innerHTML = photo ? `
+      <img class="poi-item-photo" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+      <div class="poi-item-copy"><strong>${displayIndex + 1}. ${name}</strong><span>${description}</span></div>
+    ` : `<strong>${displayIndex + 1}. ${name}</strong><span>${description}</span>`;
     const focusPoi = () => {
       const marker = poiMarkers[displayIndex];
       if (!marker) return;
@@ -1059,6 +1120,17 @@ function renderPois() {
     });
     poiList.appendChild(item);
   });
+
+  const creditedPois = poiIndices
+    .map(index => ({ name: route.pois[index][0], photo: route.pois[index][3] }))
+    .filter(item => item.photo);
+  photoCredits.hidden = creditedPois.length === 0;
+  photoCredits.innerHTML = creditedPois.length ? `
+    <p>사진 출처</p>
+    <ul>${creditedPois.map(({ name, photo }) => `
+      <li>${name} · <a href="${photo.source}" target="_blank" rel="noopener">${photo.author}</a> · <a href="${photo.licenseUrl}" target="_blank" rel="noopener">${photo.license}</a></li>
+    `).join("")}</ul>
+  ` : "";
 
   poiToggleButton.hidden = poiIndices.length <= 6;
   poiToggleButton.textContent = isExpanded ? "포인트 접기" : `포인트 ${poiIndices.length - 6}개 더 보기`;

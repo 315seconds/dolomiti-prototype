@@ -224,25 +224,68 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.map-current-step {
+.map-step-sheet {
   position: absolute;
   z-index: 800;
-  right: 12px;
-  bottom: 12px;
-  left: 62px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  max-height: calc(100% - 20px);
+  padding: 6px 8px 8px;
+  overflow: hidden;
+  border: 1px solid rgba(24, 33, 31, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 252, 245, 0.95);
+  box-shadow: 0 8px 24px rgba(24, 33, 31, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.map-step-sheet-handle {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 0 auto 5px;
+  border-radius: 999px;
+  background: rgba(99, 112, 108, 0.35);
+}
+
+.map-step-sheet-toolbar {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: 4px;
+  align-items: stretch;
+}
+
+.map-step-nav {
+  min-width: 44px;
+  min-height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(33, 76, 63, 0.07);
+  color: var(--pine);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.map-step-nav:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.map-current-step {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 2px 9px;
   align-items: center;
   min-height: 58px;
-  padding: 9px 12px;
-  border: 1px solid rgba(24, 33, 31, 0.12);
-  border-radius: 14px;
-  background: rgba(255, 252, 245, 0.94);
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
   color: var(--ink);
   text-align: left;
-  box-shadow: 0 8px 24px rgba(24, 33, 31, 0.18);
-  backdrop-filter: blur(12px);
   cursor: pointer;
 }
 
@@ -292,6 +335,119 @@ h3 {
 .map-current-step small {
   color: var(--muted);
   font-size: 11px;
+}
+
+.map-step-sheet-expanded {
+  margin-top: 7px;
+  padding-top: 9px;
+  border-top: 1px solid rgba(24, 33, 31, 0.1);
+}
+
+.map-step-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px 8px;
+}
+
+.map-step-sheet-head strong {
+  font-size: 14px;
+}
+
+.map-step-sheet-head button {
+  min-width: 48px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(33, 76, 63, 0.08);
+  color: var(--pine);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.map-step-sheet-list {
+  display: grid;
+  gap: 6px;
+  max-height: min(28svh, 190px);
+  margin: 0;
+  padding: 0 2px 2px;
+  overflow-y: auto;
+  list-style: none;
+  overscroll-behavior: contain;
+}
+
+.map-sheet-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 7px 9px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: rgba(247, 246, 241, 0.76);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.map-sheet-step.active {
+  border-color: rgba(33, 76, 63, 0.28);
+  background: #eef1e2;
+}
+
+.map-sheet-step-index {
+  display: grid;
+  place-items: center;
+  min-width: 46px;
+  min-height: 26px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--pine);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.map-sheet-step.trail .map-sheet-step-index {
+  background: var(--trail);
+}
+
+.map-sheet-step.cable .map-sheet-step-index {
+  background: var(--sky);
+}
+
+.map-sheet-step.lift .map-sheet-step-index {
+  background: var(--lift);
+}
+
+.map-sheet-step.car .map-sheet-step-index {
+  background: var(--car);
+}
+
+.map-sheet-step strong,
+.map-sheet-step small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-sheet-step strong {
+  font-size: 12px;
+}
+
+.map-sheet-step small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.leaflet-bottom.leaflet-left {
+  bottom: 96px;
 }
 
 #routeMap {
@@ -972,8 +1128,12 @@ button:focus-visible,
     line-height: inherit;
   }
 
-  .map-current-step {
+  .map-step-sheet {
     display: none;
+  }
+
+  .leaflet-bottom.leaflet-left {
+    bottom: 0;
   }
 
   .mobile-tabs-wrap {

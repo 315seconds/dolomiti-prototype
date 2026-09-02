@@ -49,7 +49,21 @@
         <section class="map-stage" aria-label="코스 지도">
           <div class="map-frame">
             <div id="routeMap"></div>
-            <button id="mapCurrentStep" class="map-current-step" type="button" aria-label="현재 선택 구간 자세히 보기"></button>
+            <section id="mapStepSheet" class="map-step-sheet" aria-label="지도 구간 선택">
+              <span class="map-step-sheet-handle" aria-hidden="true"></span>
+              <div class="map-step-sheet-toolbar">
+                <button id="previousStepButton" class="map-step-nav" type="button" aria-label="이전 구간">‹</button>
+                <button id="mapCurrentStep" class="map-current-step" type="button" aria-label="전체 구간 목록 열기" aria-expanded="false"></button>
+                <button id="nextStepButton" class="map-step-nav" type="button" aria-label="다음 구간">›</button>
+              </div>
+              <div id="mapStepSheetExpanded" class="map-step-sheet-expanded" hidden>
+                <div class="map-step-sheet-head">
+                  <strong>구간 선택</strong>
+                  <button id="closeMapStepSheet" type="button" aria-label="구간 목록 닫기">닫기</button>
+                </div>
+                <ol id="mapStepList" class="map-step-sheet-list"></ol>
+              </div>
+            </section>
           </div>
         </section>
 

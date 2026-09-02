@@ -625,6 +625,7 @@ let importedTrackLayer = null;
 let importedPlayback = false;
 let weatherRequestToken = 0;
 let activeVariants = { marmolada: "a" };
+let isMapStepSheetOpen = false;
 const expandedPoiRoutes = new Set();
 
 const appShell = document.querySelector(".app-shell");
@@ -645,7 +646,13 @@ const poiSection = document.querySelector("#poiSection");
 const poiImage = document.querySelector("#poiImage");
 const poiList = document.querySelector("#poiList");
 const poiToggleButton = document.querySelector("#poiToggleButton");
+const mapStepSheet = document.querySelector("#mapStepSheet");
 const mapCurrentStep = document.querySelector("#mapCurrentStep");
+const previousStepButton = document.querySelector("#previousStepButton");
+const nextStepButton = document.querySelector("#nextStepButton");
+const closeMapStepSheet = document.querySelector("#closeMapStepSheet");
+const mapStepSheetExpanded = document.querySelector("#mapStepSheetExpanded");
+const mapStepList = document.querySelector("#mapStepList");
 const weatherPlace = document.querySelector("#weatherPlace");
 const weatherBody = document.querySelector("#weatherBody");
 const variantPanel = document.querySelector("#variantPanel");
@@ -812,6 +819,7 @@ function getVisibleImportedTrack(route) {
 
 function selectRoute(index) {
   stopPlayback();
+  setMapStepSheetOpen(false);
   activeRouteIndex = index;
   activeStepIndex = 0;
   activeLayer = "all";
@@ -969,6 +977,7 @@ function findClosestTrackIndex(coords, target, startIndex = 0) {
 
 function selectStep(index) {
   stopPlayback();
+  setMapStepSheetOpen(false);
   activeStepIndex = index;
   segmentProgress = 0;
   renderMap();
@@ -1078,6 +1087,60 @@ function updateCurrentStep() {
     <strong>${step.title}</strong>
     <small>${stepMetric}</small>
   `;
+  renderMapStepSheet();
+}
+
+function renderMapStepSheet() {
+  const route = routeData[activeRouteIndex];
+  const visibleSteps = getVisibleSteps(route);
+  previousStepButton.disabled = activeStepIndex <= 0;
+  nextStepButton.disabled = activeStepIndex >= visibleSteps.length - 1;
+  mapStepList.innerHTML = "";
+
+  visibleSteps.forEach(({ step }, index) => {
+    const stepLabel = step.variantRange?.[getActiveVariantId(route)] || step.range || `${index + 1}`;
+    const metric = step.mode === "trail"
+      ? `${step.meta} · ${stepDistanceKm(step.coords).toFixed(1)}km`
+      : step.meta;
+    const listItem = document.createElement("li");
+    const button = document.createElement("button");
+    button.className = `map-sheet-step ${step.mode}`;
+    button.classList.toggle("active", index === activeStepIndex);
+    button.type = "button";
+    button.innerHTML = `
+      <span class="map-sheet-step-index">${stepLabel}</span>
+      <span><strong>${step.title}</strong><small>${metric}</small></span>
+    `;
+    button.addEventListener("click", () => {
+      activeLayer = "all";
+      renderFilters();
+      selectStep(index);
+    });
+    listItem.appendChild(button);
+    mapStepList.appendChild(listItem);
+  });
+}
+
+function setMapStepSheetOpen(open) {
+  isMapStepSheetOpen = open;
+  mapStepSheet.classList.toggle("open", open);
+  mapStepSheetExpanded.hidden = !open;
+  mapCurrentStep.setAttribute("aria-expanded", String(open));
+  mapCurrentStep.setAttribute("aria-label", open ? "전체 구간 목록 닫기" : "전체 구간 목록 열기");
+  if (open) {
+    window.requestAnimationFrame(() => {
+      mapStepList.querySelector(".active")?.scrollIntoView({ block: "nearest" });
+    });
+  }
+}
+
+function selectAdjacentStep(offset) {
+  const lastIndex = getVisibleSteps().length - 1;
+  const nextIndex = Math.max(0, Math.min(lastIndex, activeStepIndex + offset));
+  if (nextIndex === activeStepIndex) return;
+  activeLayer = "all";
+  renderFilters();
+  selectStep(nextIndex);
 }
 
 function setMarkerToStepStart() {
@@ -1191,6 +1254,7 @@ function stepDistanceKm(coords) {
 
 function startPlayback() {
   stopPlayback(false);
+  setMapStepSheetOpen(false);
   const route = routeData[activeRouteIndex];
   const playbackStepIndices = getVisibleSteps(route)
     .map(({ step }, index) => ({ step, index }))
@@ -1535,8 +1599,12 @@ playButton.addEventListener("click", () => {
 });
 
 mapCurrentStep.addEventListener("click", () => {
-  document.querySelector(".current-panel").scrollIntoView({ behavior: "smooth", block: "center" });
+  setMapStepSheetOpen(!isMapStepSheetOpen);
 });
+
+previousStepButton.addEventListener("click", () => selectAdjacentStep(-1));
+nextStepButton.addEventListener("click", () => selectAdjacentStep(1));
+closeMapStepSheet.addEventListener("click", () => setMapStepSheetOpen(false));
 
 poiToggleButton.addEventListener("click", () => {
   const routeId = routeData[activeRouteIndex].id;

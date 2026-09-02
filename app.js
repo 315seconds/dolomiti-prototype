@@ -700,6 +700,8 @@ const poiToggleButton = document.querySelector("#poiToggleButton");
 const photoCredits = document.querySelector("#photoCredits");
 const mapStepSheet = document.querySelector("#mapStepSheet");
 const mapCurrentStep = document.querySelector("#mapCurrentStep");
+const mapStepDetailMeta = document.querySelector("#mapStepDetailMeta");
+const mapStepDetailNote = document.querySelector("#mapStepDetailNote");
 const previousStepButton = document.querySelector("#previousStepButton");
 const nextStepButton = document.querySelector("#nextStepButton");
 const closeMapStepSheet = document.querySelector("#closeMapStepSheet");
@@ -1147,6 +1149,8 @@ function updateCurrentStep() {
   currentStepTitle.textContent = step.title;
   currentStepMeta.textContent = step.meta;
   currentStepNote.textContent = step.note;
+  mapStepDetailMeta.textContent = step.meta;
+  mapStepDetailNote.textContent = step.note;
   mapCurrentStep.dataset.mode = step.mode;
   mapCurrentStep.innerHTML = `
     <span>${stepLabel}</span>

@@ -177,7 +177,7 @@ h3 {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(24, 33, 31, 0.1);
-  height: clamp(340px, 50svh, 440px);
+  height: clamp(360px, 58svh, 500px);
   border-right: 0;
   border-left: 0;
   border-radius: 0;
@@ -302,6 +302,20 @@ h3 {
   margin-top: 7px;
   padding-top: 9px;
   border-top: 1px solid rgba(24, 33, 31, 0.1);
+}
+
+.map-step-detail {
+  padding: 3px 7px 12px;
+}
+
+.map-step-detail p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.map-step-detail p + p {
+  margin-top: 5px;
 }
 
 .map-step-sheet-head {
@@ -511,6 +525,7 @@ h3 {
 }
 
 .current-panel {
+  display: none;
   border-color: rgba(33, 76, 63, 0.25);
   background: #eef1e2;
   box-shadow: 0 8px 24px rgba(33, 76, 63, 0.08);
@@ -1064,6 +1079,10 @@ button:focus-visible,
 
   .map-step-sheet {
     display: none;
+  }
+
+  .current-panel {
+    display: block;
   }
 
   .leaflet-bottom.leaflet-left {

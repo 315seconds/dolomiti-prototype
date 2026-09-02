@@ -67,7 +67,7 @@ const poiPhotos = {
 const routeData = [
   {
     id: "rosengarten",
-    day: "Day 1",
+    day: "2일차",
     title: "로젠가르텐 & 카레짜",
     backgroundImage: "assets/01-rosengarten-map.jpg",
     summary: "숙소에서 버스로 노바레반테까지 이동해 케이블카를 타고 Malga Frommer에서 곤돌라로 환승한 뒤 쾰너 산장에 올라 중식, 이후 파올리나 산장까지 트레킹하고 리프트·버스로 카레짜 호수 산책 후 숙소로 복귀합니다.",
@@ -149,7 +149,7 @@ const routeData = [
   },
   {
     id: "marmolada",
-    day: "Day 2",
+    day: "3일차",
     title: "마르몰라다 & 사쓰 포르도이",
     backgroundImage: "assets/02-marmolada-map.jpg",
     summary: "숙소에서 버스로 Alba까지 이동한 뒤 Col dei Rossi와 Fredarola까지 함께 이동합니다. A팀은 Passo Pordoi로 바로 가고, B팀은 Viel dal Pan을 왕복한 뒤 같은 길에 합류합니다. 전원 Sass Pordoi 전망대를 왕복하고 하부역 앞 주차장에서 단체 버스로 QC Terme와 숙소로 이동합니다.",
@@ -288,7 +288,7 @@ const routeData = [
   },
   {
     id: "seceda",
-    day: "Day 3",
+    day: "4일차",
     title: "오르티세이 & 세체다",
     backgroundImage: "assets/03-seceda-map.jpg",
     summary: "오르티세이에서 세체다 케이블카로 올라 Baita Sofie, Pieralongia, Troier, Fermeda 쪽 산장 루프를 돈 뒤 복귀합니다.",
@@ -379,7 +379,7 @@ const routeData = [
   },
   {
     id: "alpe-siusi",
-    day: "Day 4",
+    day: "5일차",
     title: "알페 디 시우시",
     backgroundImage: "assets/04-alpe-siusi-map.jpg",
     summary: "Ortisei에서 Mont Seuc로 오른 뒤 Sanon, Hotel Ritsch, Saltria 방향으로 고원 루프를 걷고 Florian 리프트를 선택 구간으로 둡니다.",
@@ -474,7 +474,7 @@ const routeData = [
   },
   {
     id: "cinque-torri",
-    day: "Day 5",
+    day: "6일차",
     title: "친퀘토리",
     backgroundImage: "assets/05-cinque-torri-map.jpg",
     summary: "Passo Gardena, Valparola, Falzarego를 차량으로 지나 Bai de Dones에서 리프트를 타고 Scoiattoli, Cinque Torri, Averau, Nuvolau를 연결합니다.",
@@ -579,7 +579,7 @@ const routeData = [
   },
   {
     id: "tre-cime",
-    day: "Day 6",
+    day: "7일차",
     title: "트레치메 디 라바레도",
     backgroundImage: "assets/06-tre-cime-map.jpg",
     summary: "Auronzo 산장에서 Lavaredo, Locatelli, 동굴 포토존, Langalm 방향을 지나 101·105 코스로 순환합니다.",
@@ -855,7 +855,7 @@ function renderRoute() {
   const route = routeData[activeRouteIndex];
   const visibleSteps = getVisibleSteps(route);
   appShell.style.setProperty("--route-background", `url("${route.backgroundImage}")`);
-  routeEyebrow.textContent = `${route.day} · ${visibleSteps.length}개 구간`;
+  routeEyebrow.textContent = route.day;
   routeTitle.textContent = route.title;
   renderSummary(route);
   renderFilters();

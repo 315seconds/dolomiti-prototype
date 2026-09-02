@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dolomiti Routebook Prototype</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="route-rail" aria-label="트레킹 일정">
+        <div class="brand">
+          <span class="brand-mark">D</span>
+          <div>
+            <p>Dolomiti</p>
+            <h1>Routebook</h1>
+          </div>
+        </div>
+        <div id="routeTabs" class="route-tabs"></div>
+      </aside>
+
+      <section class="route-view">
+        <header class="topbar">
+          <div>
+            <p id="routeEyebrow" class="eyebrow"></p>
+            <h2 id="routeTitle"></h2>
+          </div>
+          <button id="playButton" class="primary-button" type="button" aria-label="코스 재생">
+            <span id="playIcon">▶</span>
+            <span id="playLabel">코스 재생</span>
+          </button>
+        </header>
+
+        <div class="mobile-tabs-wrap">
+          <div id="mobileRouteTabs" class="mobile-route-tabs" aria-label="모바일 일정 선택"></div>
+        </div>
+
+        <section id="variantPanel" class="variant-panel" hidden>
+          <div>
+            <p class="eyebrow">Course</p>
+            <h3>팀 코스 선택</h3>
+          </div>
+          <div id="variantButtons" class="variant-buttons"></div>
+        </section>
+
+        <section class="map-stage" aria-label="코스 지도">
+          <div class="map-frame">
+            <div id="routeMap"></div>
+            <button id="mapCurrentStep" class="map-current-step" type="button" aria-label="현재 선택 구간 자세히 보기"></button>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <article class="guide-panel current-panel">
+            <div class="panel-head">
+              <p class="eyebrow">선택 구간</p>
+              <h3 id="currentStepTitle"></h3>
+            </div>
+            <p id="currentStepMeta" class="muted"></p>
+            <p id="currentStepNote" class="step-note"></p>
+          </article>
+
+          <article class="guide-panel compact summary-panel">
+            <div class="panel-head">
+              <p class="eyebrow">Summary</p>
+              <h3>오늘의 흐름</h3>
+            </div>
+            <div id="routeSummary" class="summary-stats"></div>
+          </article>
+
+          <article class="guide-panel weather-panel">
+            <div class="panel-head">
+              <p class="eyebrow">Weather</p>
+              <h3 id="weatherPlace">산악 날씨</h3>
+            </div>
+            <div id="weatherBody" class="weather-body">
+              <p class="muted">날씨를 불러오는 중입니다.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="steps-section">
+          <div class="section-title">
+            <h3>구간</h3>
+            <div id="layerFilters" class="layer-filters"></div>
+          </div>
+          <ol id="stepList" class="step-list"></ol>
+        </section>
+
+        <section id="poiSection" class="poi-section" hidden>
+          <div class="section-title">
+            <h3>산장·포인트</h3>
+          </div>
+          <div class="poi-layout">
+            <img id="poiImage" alt="">
+            <div id="poiList" class="poi-list"></div>
+          </div>
+          <button id="poiToggleButton" class="poi-toggle-button" type="button" hidden></button>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="tracks-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

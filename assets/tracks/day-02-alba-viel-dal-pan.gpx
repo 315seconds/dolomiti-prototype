@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx version="1.1" creator="outdooractive - http://www.outdooractive.com" xmlns="http://www.topografix.com/GPX/1/1" xmlns:oa="http://www.outdooractive.com/GPX/Extensions/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.outdooractive.com/GPX/Extensions/1 https://www.outdooractive.com/schema/gpx_extensions.xsd">
+  <metadata>
+    <name>Mountain Tour to Col di Rosc</name>
+    <author>
+      <name>hwang leo - Community</name>
+    </author>
+    <link href="https://www.outdooractive.com/r/349816278"/>
+    <time>2026-08-15T05:38:22.018Z</time>
+    <extensions>
+      <oa:oaCategory>mountaineering</oa:oaCategory>
+    </extensions>
+  </metadata>
+  <trk>
+    <name>Mountain Tour to Col di Rosc</name>
+    <type>mountaineering</type>
+    <trkseg>
+      <trkpt lat="46.457509" lon="11.788861">
+        <ele>1494.56364</ele>
+        <name>Canazei, Comun General de Fascia</name>
+        <extensions>
+          <oa:Extension>
+            <oa:mapZoom>17</oa:mapZoom>
+          </oa:Extension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="46.474546" lon="11.802258">
+        <ele>2375.9</ele>
+        <name>Col di Rosc, Canazei, Comun General de Fascia</name>
+        <extensions>
+          <oa:Extension>
+            <oa:mapZoom>17</oa:mapZoom>
+          </oa:Extension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="46.474568" lon="11.802284">
+        <ele>2376.3</ele>
+      </trkpt>
+      <trkpt lat="46.474609" lon="11.802707">
+        <ele>2376.7</ele>
+      </trkpt>
+      <trkpt lat="46.47468" lon="11.803054">
+        <ele>2376.1</ele>
+      </trkpt>
+      <trkpt lat="46.474718" lon="11.803212">
+        <ele>2375.2</ele>
+      </trkpt>
+      <trkpt lat="46.474799" lon="11.803351">
+        <ele>2373.9</ele>
+      </trkpt>
+      <trkpt lat="46.474918" lon="11.80379">
+        <ele>2369.1</ele>
+      </trkpt>
+      <trkpt lat="46.475036" lon="11.80423">
+        <ele>2363.5</ele>
+      </trkpt>
+      <trkpt lat="46.475074" lon="11.80451">
+        <ele>2360.4</ele>
+      </trkpt>
+      <trkpt lat="46.475248" lon="11.804962">
+        <ele>2354.8</ele>
+      </trkpt>
+      <trkpt lat="46.47542" lon="11.805209">
+        <ele>2350.1</ele>
+      </trkpt>
+      <trkpt lat="46.475547" lon="11.805534">
+        <ele>2347.8</ele>
+      </trkpt>
+      <trkpt lat="46.475675" lon="11.805859">
+        <ele>2346.6</ele>
+      </trkpt>
+      <trkpt lat="46.475687" lon="11.806114">
+        <ele>2345.3</ele>
+      </trkpt>
+      <trkpt lat="46.475893" lon="11.806629">
+        <ele>2341.2</ele>
+      </trkpt>
+      <trkpt lat="46.475956" lon="11.806856">
+        <ele>2339.8</ele>
+      </trkpt>
+      <trkpt lat="46.475977" lon="11.807312">
+        <ele>2338.7</ele>
+      </trkpt>
+      <trkpt lat="46.476033" lon="11.807443">
+        <ele>2339.2</ele>
+      </trkpt>
+      <trkpt lat="46.476098" lon="11.807478">
+        <ele>2339.3</ele>
+      </trkpt>
+      <trkpt lat="46.47616" lon="11.807513">
+        <ele>2339.4</ele>
+        <name>Canazei, Comun General de Fascia</name>
+        <extensions>
+          <oa:Extension>
+            <oa:mapZoom>16</oa:mapZoom>
+          </oa:Extension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="46.476221" lon="11.807548">
+        <ele>2339.4</ele>
+      </trkpt>
+      <trkpt lat="46.476307" lon="11.807791">
+        <ele>2340.0</ele>
+      </trkpt>
+      <trkpt lat="46.476361" lon="11.808012">
+        <ele>2341.0</ele>
+      </trkpt>
+      <trkpt lat="46.476372" lon="11.808161">
+        <ele>2341.6</ele>
+      </trkpt>
+      <trkpt lat="46.476422" lon="11.808276">
+        <ele>2342.3</ele>
+      </trkpt>
+      <trkpt lat="46.476615" lon="11.808734">
+        <ele>2342.3</ele>
+      </trkpt>
+      <trkpt lat="46.476809" lon="11.809192">
+        <ele>2346.9</ele>
+      </trkpt>
+      <trkpt lat="46.476877" lon="11.809357">
+        <ele>2348.6</ele>
+      </trkpt>
+      <trkpt lat="46.4771" lon="11.80989">
+        <ele>2353.3</ele>
+      </trkpt>
+      <trkpt lat="46.477186" lon="11.810116">
+        <ele>2356.6</ele>
+      </trkpt>
+      <trkpt lat="46.477311" lon="11.810267">
+        <ele>2359.7</ele>
+      </trkpt>
+      <trkpt lat="46.477346" lon="11.810344">
+        <ele>2361.5</ele>
+      </trkpt>
+      <trkpt lat="46.477382" lon="11.810421">
+        <ele>2363.6</ele>
+      </trkpt>
+      <trkpt lat="46.477382" lon="11.810719">
+        <ele>2364.8</ele>
+      </trkpt>
+      <trkpt lat="46.477379" lon="11.811116">
+        <ele>2367.0</ele>
+      </trkpt>
+      <trkpt lat="46.477376" lon="11.811512">
+        <ele>2369.3</ele>
+      </trkpt>
+      <trkpt lat="46.477398" lon="11.811954">
+        <ele>2371.6</ele>
+        <name>Canazei, Comun General de Fascia</name>
+        <extensions>
+          <oa:Extension>
+            <oa:mapZoom>16</oa:mapZoom>
+          </oa:Extension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="46.477399" lon="11.811975">
+        <ele>2371.7</ele>
+      </trkpt>
+      <trkpt lat="46.477497" lon="11.812433">
+        <ele>2375.7</ele>
+      </trkpt>
+      <trkpt lat="46.477492" lon="11.813048">
+        <ele>2376.8</ele>
+      </trkpt>
+      <trkpt lat="46.477487" lon="11.813663">
+        <ele>2379.2</ele>
+      </trkpt>
+      <trkpt lat="46.477467" lon="11.813993">
+        <ele>2381.4</ele>
+      </trkpt>
+      <trkpt lat="46.477447" lon="11.814323">
+        <ele>2383.4</ele>
+      </trkpt>
+      <trkpt lat="46.47746" lon="11.814462">
+        <ele>2385.1</ele>
+      </trkpt>
+      <trkpt lat="46.47753" lon="11.814619">
+        <ele>2386.5</ele>
+      </trkpt>
+      <trkpt lat="46.477543" lon="11.814745">
+        <ele>2385.5</ele>
+      </trkpt>
+      <trkpt lat="46.477591" lon="11.814813">
+        <ele>2385.1</ele>
+        <name>Rifugio Fredarola Harbor, Livinallongo del Col di Lana</name>
+        <extensions>
+          <oa:Extension>
+            <oa:mapZoom>15</oa:mapZoom>
+          </oa:Extension>
+        </extensions>
+      </trkpt>
+      <trkpt lat="46.477555" lon="11.814867">
+        <ele>2384.5</ele>
+      </trkpt>
+      <trkpt lat="46.477504" lon="11.815002">
+        <ele>2383.9</ele>
+      </trkpt>
+      <trkpt lat="46.477445" lon="11.81513">
+        <ele>2385.1</ele>
+      </trkpt>
+      <trkpt lat="46.477395" lon="11.81518">
+        <ele>2386.6</ele>
+      </trkpt>
+      <trkpt lat="46.477322" lon="11.815226">
+        <ele>2388.5</ele>
+      </trkpt>
+      <trkpt lat="46.477258" lon="11.815255">
+        <ele>2390.2</ele>
+      </trkpt>
+      <trkpt lat="46.477215" lon="11.815337">
+        <ele>2391.0</ele>
+      </trkpt>
+      <trkpt lat="46.477112" lon="11.815628">
+        <ele>2391.8</ele>
+      </trkpt>
+      <trkpt lat="46.476951" lon="11.815825">
+        <ele>2389.2</ele>
+      </trkpt>
+      <trkpt lat="46.476906" lon="11.816003">
+        <ele>2388.8</ele>
+      </trkpt>
+      <trkpt lat="46.476771" lon="11.816388">
+        <ele>2388.8</ele>
+      </trkpt>
+      <trkpt lat="46.476572" lon="11.816617">
+        <ele>2390.7</ele>
+      </trkpt>
+      <trkpt lat="46.476443" lon="11.816761">
+        <ele>2392.2</ele>
+      </trkpt>
+      <trkpt lat="46.476299" lon="11.817096">
+        <ele>2394.0</ele>
+      </trkpt>
+      <trkpt lat="46.476261" lon="11.817218">
+        <ele>2395.2</ele>
+      </trkpt>
+      <trkpt lat="46.476189" lon="11.817342">
+        <ele>2395.8</ele>
+      </trkpt>
+      <trkpt lat="46.476098" lon="11.817499">
+        <ele>2397.1</ele>
+      </trkpt>
+      <trkpt lat="46.476051" lon="11.817645">
+        <ele>2399.0</ele>
+      </trkpt>
+      <trkpt lat="46.475989" lon="11.81778">
+        <ele>2399.4</ele>
+      </trkpt>
+      <trkpt lat="46.475943" lon="11.817971">
+        <ele>2401.7</ele>
+      </trkpt>
+      <trkpt lat="46.4759" lon="11.818073">
+        <ele>2401.5</ele>
+      </trkpt>
+      <trkpt lat="46.475903" lon="11.818104">
+        <ele>2401.8</ele>
+      </trkpt>
+      <trkpt lat="46.475906" lon="11.818135">
+        <ele>2402.0</ele>
+      </trkpt>
+      <trkpt lat="46.475989" lon="11.818226">
+        <ele>2400.4</ele>
+      </trkpt>
+      <trkpt lat="46.476056" lon="11.818309">
+        <ele>2399.6</ele>
+      </trkpt>
+      <trkpt lat="46.476076" lon="11.818366">
+        <ele>2399.3</ele>
+      </trkpt>
+      <trkpt lat="46.476088" lon="11.818456">
+        <ele>2398.6</ele>
+      </trkpt>
+      <trkpt lat="46.476063" lon="11.818545">
+        <ele>2396.0</ele>
+      </trkpt>
+      <trkpt lat="46.476024" lon="11.818626">
+        <ele>2393.5</ele>
+      </trkpt>
+      <trkpt lat="46.476032" lon="11.818714">
+        <ele>2394.0</ele>
+      </trkpt>
+      <trkpt lat="46.476067" lon="11.818788">
+        <ele>2394.7</ele>
+      </trkpt>
+      <trkpt lat="46.476147" lon="11.818963">
+        <ele>2394.4</ele>
+      </trkpt>
+      <trkpt lat="46.476162" lon="11.81908">
+        <ele>2394.3</ele>
+      </trkpt>
+      <trkpt lat="46.476137" lon="11.819176">
+        <ele>2393.7</ele>
+      </trkpt>
+      <trkpt lat="46.476085" lon="11.819272">
+        <ele>2391.9</ele>
+      </trkpt>
+      <trkpt lat="46.476097" lon="11.819334">
+        <ele>2392.1</ele>
+      </trkpt>
+      <trkpt lat="46.476152" lon="11.819475">
+        <ele>2392.1</ele>
+      </trkpt>
+      <trkpt lat="46.476161" lon="11.81956">
+        <ele>2391.7</ele>
+      </trkpt>
+      <trkpt lat="46.476136" lon="11.81967">
+        <ele>2390.9</ele>
+      </trkpt>
+      <trkpt lat="46.475997" lon="11.819968">
+        <ele>2386.1</ele>
+      </trkpt>
+      <trkpt lat="46.475909" lon="11.82021">
+        <ele>2384.5</ele>
+      </trkpt>
+      <trkpt lat="46.475832" lon="11.820264">
+        <ele>2382.5</ele>
+      </trkpt>
+      <trkpt lat="46.475754" lon="11.820301">
+        <ele>2381.0</ele>
+      </trkpt>
+      <trkpt lat="46.475439" lon="11.820421">
+        <ele>2374.7</ele>
+      </trkpt>
+      <trkpt lat="46.475334" lon="11.820522">
+        <ele>2373.8</ele>
+      </trkpt>
+      <trkpt lat="46.475307" lon="11.820581">
+        <ele>2374.3</ele>
+      </trkpt>
+      <trkpt lat="46.47526" lon="11.820724">
+        <ele>2374.8</ele>
+      </trkpt>
+      <trkpt lat="46.475218" lon="11.820779">
+        <ele>2374.4</ele>
+      </trkpt>
+      <trkpt lat="46.475165" lon="11.820791">
+        <ele>2373.2</ele>
+      </trkpt>
+      <trkpt lat="46.475102" lon="11.820806">
+        <ele>2372.3</ele>
+      </trkpt>
+      <trkpt lat="46.475067" lon="11.820851">
+        <ele>2373.3</ele>
+      </trkpt>
+      <trkpt lat="46.475005" lon="11.82088">
+        <ele>2373.0</ele>
+      </trkpt>
+      <trkpt lat="46.474932" lon="11.820944">
+        <ele>2373.4</ele>
+      </trkpt>
+      <trkpt lat="46.474835" lon="11.821047">
+        <ele>2373.8</ele>
+      </trkpt>
+      <trkpt lat="46.474695" lon="11.821184">
+        <ele>2374.1</ele>
+      </trkpt>
+      <trkpt lat="46.474564" lon="11.821287">
+        <ele>2374.3</ele>
+      </trkpt>
+      <trkpt lat="46.474463" lon="11.821359">
+        <ele>2375.3</ele>
+      </trkpt>
+      <trkpt lat="46.474346" lon="11.821435">
+        <ele>2376.4</ele>
+      </trkpt>
+      <trkpt lat="46.474156" lon="11.821648">
+        <ele>2380.9</ele>
+      </trkpt>
+      <trkpt lat="46.473978" lon="11.821868">
+        <ele>2382.2</ele>
+      </trkpt>
+      <trkpt lat="46.473819" lon="11.82207">
+        <ele>2384.3</ele>
+      </trkpt>
+      <trkpt lat="46.47369" lon="11.82223">
+        <ele>2385.0</ele>
+      </trkpt>
+      <trkpt lat="46.473602" lon="11.822362">
+        <ele>2386.3</ele>
+      </trkpt>
+      <trkpt lat="46.473506" lon="11.82255">
+        <ele>2387.1</ele>
+      </trkpt>
+      <trkpt lat="46.473486" lon="11.822728">
+        <ele>2388.7</ele>
+      </trkpt>
+      <trkpt lat="46.473451" lon="11.823127">
+        <ele>2387.9</ele>
+      </trkpt>
+      <trkpt lat="46.47346" lon="11.823321">
+        <ele>2387.5</ele>
+      </trkpt>
+      <trkpt lat="46.473517" lon="11.823508">
+        <ele>2386.8</ele>
+      </trkpt>
+      <trkpt lat="46.473519" lon="11.823642">
+        <ele>2386.7</ele>
+      </trkpt>
+      <trkpt lat="46.473486" lon="11.823741">
+        <ele>2387.7</ele>
+      </trkpt>
+      <trkpt lat="46.473406" lon="11.823849">
+        <ele>2386.5</ele>
+      </trkpt>
+      <trkpt lat="46.473398" lon="11.823961">
+        <ele>2387.1</ele>
+      </trkpt>
+      <trkpt lat="46.473425" lon="11.824137">
+        <ele>2390.7</ele>
+      </trkpt>
+      <trkpt lat="46.473419" lon="11.824209">
+        <ele>2392.3</ele>
+      </trkpt>
+      <trkpt lat="46.473378" lon="11.824281">
+        <ele>2392.8</ele>
+      </trkpt>
+      <trkpt lat="46.473264" lon="11.824458">
+        <ele>2395.2</ele>
+      </trkpt>
+      <trkpt lat="46.47318" lon="11.824636">
+        <ele>2399.1</ele>
+      </trkpt>
+      <trkpt lat="46.473155" lon="11.824769">
+        <ele>2400.9</ele>
+      </trkpt>
+      <trkpt lat="46.473193" lon="11.825406">
+        <ele>2405.2</ele>
+      </trkpt>
+      <trkpt lat="46.473144" lon="11.825702">
+        <ele>2408.4</ele>
+      </trkpt>
+      <trkpt lat="46.473071" lon="11.825955">
+        <ele>2413.0</ele>
+      </trkpt>
+      <trkpt lat="46.473112" lon="11.826139">
+        <ele>2415.7</ele>
+      </trkpt>
+      <trkpt lat="46.473143" lon="11.826285">
+        <ele>2416.4</ele>
+      </trkpt>
+      <trkpt lat="46.473189" lon="11.826466">
+        <ele>2415.9</ele>
+      </trkpt>
+      <trkpt lat="46.473256" lon="11.826589">
+        <ele>2416.0</ele>
+      </trkpt>
+      <trkpt lat="46.473317" lon="11.826631">
+        <ele>2416.9</ele>
+      </trkpt>
+      <trkpt lat="46.47335" lon="11.826657">
+        <ele>2416.5</ele>
+      </trkpt>
+      <trkpt lat="46.473435" lon="11.826681">
+        <ele>2415.7</ele>
+      </trkpt>
+      <trkpt lat="46.473597" lon="11.826794">
+        <ele>2415.9</ele>
+      </trkpt>
+      <trkpt lat="46.473647" lon="11.826872">
+        <ele>2416.1</ele>
+      </trkpt>
+      <trkpt lat="46.473706" lon="11.826977">
+        <ele>2417.5</ele>
+      </trkpt>
+      <trkpt lat="46.473745" lon="11.827147">
+        <ele>2416.9</ele>
+      </trkpt>
+      <trkpt lat="46.473757" lon="11.827257">
+        <ele>2416.2</ele>
+      </trkpt>
+      <trkpt lat="46.473762" lon="11.827371">
+        <ele>2416.3</ele>
+      </trkpt>
+      <trkpt lat="46.473757" lon="11.827552">
+        <ele>2415.1</ele>
+      </trkpt>
+      <trkpt lat="46.473799" lon="11.82759">
+        <ele>2416.2</ele>
+      </trkpt>
+      <trkpt lat="46.473948" lon="11.827623">
+        <ele>2417.6</ele>
+      </trkpt>
+      <trkpt lat="46.474073" lon="11.827674">
+        <ele>2419.5</ele>
+      </trkpt>
+      <trkpt lat="46.47411" lon="11.827709">
+        <ele>2420.1</ele>
+      </trkpt>
+      <trkpt lat="46.474146" lon="11.827795">
+        <ele>2419.2</ele>
+      </trkpt>
+      <trkpt lat="46.474175" lon="11.827881">
+        <ele>2417.9</ele>
+      </trkpt>
+      <trkpt lat="46.474203" lon="11.827907">
+        <ele>2418.7</ele>
+      </trkpt>
+      <trkpt lat="46.474253" lon="11.827995">
+        <ele>2418.9</ele>
+      </trkpt>
+      <trkpt lat="46.474282" lon="11.82816">
+        <ele>2417.3</ele>
+      </trkpt>
+      <trkpt lat="46.474286" lon="11.828276">
+        <ele>2416.3</ele>
+      </trkpt>
+      <trkpt lat="46.474317" lon="11.828388">
+        <ele>2416.1</ele>
+      </trkpt>
+      <trkpt lat="46.474363" lon="11.828532">
+        <ele>2415.4</ele>
+      </trkpt>
+      <trkpt lat="46.474413" lon="11.828709">
+        <ele>2414.9</ele>
+      </trkpt>
+      <trkpt lat="46.474396" lon="11.828862">
+        <ele>2412.7</ele>
+      </trkpt>
+      <trkpt lat="46.474363" lon="11.829018">
+        <ele>2414.3</ele>
+      </trkpt>
+      <trkpt lat="46.474305" lon="11.829192">
+        <ele>2413.4</ele>
+      </trkpt>
+      <trkpt lat="46.474302" lon="11.829326">
+        <ele>2413.4</ele>
+      </trkpt>
+      <trkpt lat="46.474389" lon="11.829793">
+        <ele>2406.2</ele>
+      </trkpt>
+      <trkpt lat="46.47443" lon="11.829918">
+        <ele>2406.2</ele>
+      </trkpt>
+      <trkpt lat="46.474468" lon="11.830034">
+        <ele>2406.6</ele>
+      </trkpt>
+      <trkpt lat="46.4745" lon="11.830168">
+        <ele>2406.8</ele>
+      </trkpt>
+      <trkpt lat="46.474535" lon="11.830303">
+        <ele>2407.2</ele>
+      </trkpt>
+      <trkpt lat="46.474561" lon="11.830425">
+        <ele>2407.8</ele>
+      </trkpt>
+      <trkpt lat="46.474566" lon="11.830559">
+        <ele>2407.7</ele>
+      </trkpt>
+      <trkpt lat="46.474543" lon="11.830737">
+        <ele>2408.4</ele>
+      </trkpt>
+      <trkpt lat="46.474482" lon="11.830895">
+        <ele>2409.9</ele>
+      </trkpt>
+      <trkpt lat="46.474347" lon="11.831125">
+        <ele>2413.6</ele>
+      </trkpt>
+      <trkpt lat="46.474313" lon="11.831281">
+        <ele>2414.1</ele>
+      </trkpt>
+      <trkpt lat="46.474422" lon="11.831494">
+        <ele>2414.7</ele>
+      </trkpt>
+      <trkpt lat="46.474524" lon="11.831713">
+        <ele>2414.6</ele>
+      </trkpt>
+      <trkpt lat="46.474586" lon="11.831851">
+        <ele>2415.5</ele>
+      </trkpt>
+      <trkpt lat="46.4746" lon="11.832002">
+        <ele>2414.9</ele>
+      </trkpt>
+      <trkpt lat="46.474607" lon="11.832218">
+        <ele>2415.6</ele>
+      </trkpt>
+      <trkpt lat="46.474634" lon="11.832437">
+        <ele>2417.7</ele>
+      </trkpt>
+      <trkpt lat="46.474615" lon="11.832911">
+        <ele>2419.1</ele>
+      </trkpt>
+      <trkpt lat="46.47462" lon="11.833117">
+        <ele>2420.7</ele>
+      </trkpt>
+      <trkpt lat="46.474558" lon="11.833331">
+        <ele>2420.5</ele>
+      </trkpt>
+      <trkpt lat="46.474496" lon="11.833529">
+        <ele>2422.5</ele>
+      </trkpt>
+      <trkpt lat="46.47448" lon="11.833601">
+        <ele>2424.0</ele>
+      </trkpt>
+      <trkpt lat="46.474279" lon="11.834038">
+        <ele>2430.2</ele>
+      </trkpt>
+      <trkpt lat="46.474215" lon="11.834069">
+        <ele>2429.5</ele>
+        <name>Rifugio Vièl dal Pan - Bindelweghütte, Canazei, Comun General de Fascia</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

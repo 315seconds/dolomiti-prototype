@@ -1256,7 +1256,7 @@ function buildWeatherAdvice({ code, rainChance, windGust, low }) {
 
   if (rainy) gear.push("방수 재킷");
   if (windGust >= 35) gear.push("바람막이");
-  if (low <= 8) gear.push("얇은 보온 레이어");
+  if (low <= 8) gear.push("따뜻한 겉옷");
 
   if (thunderstorm) {
     cautions.push("뇌우 가능성이 있어 능선 진입 전 현지 상황을 꼭 확인해 주세요.");
@@ -1273,14 +1273,20 @@ function buildWeatherAdvice({ code, rainChance, windGust, low }) {
 
   let gearAdvice = "";
   if (gear.length === 1) {
-    gearAdvice = `${gear[0]}${gear[0] === "방수 재킷" ? "을" : "를"} 챙겨 주세요.`;
+    gearAdvice = `${withObjectParticle(gear[0])} 챙겨 주세요.`;
   } else if (gear.length > 1) {
-    gearAdvice = `${gear.slice(0, -1).join(", ")}와 ${gear.at(-1)}를 챙겨 주세요.`;
+    gearAdvice = `${gear.slice(0, -1).join(", ")}와 ${withObjectParticle(gear.at(-1))} 챙겨 주세요.`;
   }
   if (!gearAdvice && !cautions.length) {
     return "대체로 무난한 날씨지만, 산악 지역은 변화가 빠르니 출발 전 바람과 강수 상황을 한 번 더 확인해 주세요.";
   }
   return [gearAdvice, ...cautions].filter(Boolean).join(" ");
+}
+
+function withObjectParticle(text) {
+  const lastCode = text.charCodeAt(text.length - 1) - 0xac00;
+  const hasFinalConsonant = lastCode >= 0 && lastCode <= 11171 && lastCode % 28 !== 0;
+  return `${text}${hasFinalConsonant ? "을" : "를"}`;
 }
 
 function formatNumber(value, digits = 0) {

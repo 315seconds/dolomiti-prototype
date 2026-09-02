@@ -26,7 +26,6 @@ const routeData = [
     poiImage: null,
     trackFile: "assets/tracks/day-01-rosengarten.gpx",
     trackSource: "Outdooractive · Geotrail 9 to Karersee/Carezza via Kuregg/Monte Coronelle",
-    trackPlayback: true,
     pois: [
       ["Nova Levante", "출발 지점", [46.432267, 11.54574]],
       ["Malga Frommer", "케이블카 하차 · 곤돌라 환승", [46.4433, 11.5894]],
@@ -529,7 +528,6 @@ const routeData = [
     poiImage: "assets/tre-cime-poi.jpg",
     trackFile: "assets/tracks/day-06-tre-cime.gpx",
     trackSource: "Trecime Trek · Tre Cime di Lavaredo circuit",
-    trackPlayback: true,
     pois: [
       ["Tre Cime Parking", "주차장/정류장", [46.612057, 12.294137]],
       ["Rifugio Auronzo", "출발/도착", [46.6128, 12.2925]],
@@ -612,17 +610,12 @@ const routeData = [
 let activeRouteIndex = 0;
 let activeStepIndex = 0;
 let activeLayer = "all";
-let isPlaying = false;
-let playTimer = null;
-let segmentProgress = 0;
 let map;
 let tileLayer;
 let drawnLayers = [];
 let poiMarkers = [];
-let movingMarker;
 let importedTracks = {};
 let importedTrackLayer = null;
-let importedPlayback = false;
 let weatherRequestToken = 0;
 let activeVariants = { marmolada: "a" };
 let isMapStepSheetOpen = false;
@@ -639,9 +632,6 @@ const currentStepNote = document.querySelector("#currentStepNote");
 const routeSummary = document.querySelector("#routeSummary");
 const stepList = document.querySelector("#stepList");
 const layerFilters = document.querySelector("#layerFilters");
-const playButton = document.querySelector("#playButton");
-const playIcon = document.querySelector("#playIcon");
-const playLabel = document.querySelector("#playLabel");
 const poiSection = document.querySelector("#poiSection");
 const poiImage = document.querySelector("#poiImage");
 const poiList = document.querySelector("#poiList");
@@ -667,29 +657,6 @@ function initMap() {
   tileLayer = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
     maxZoom: 17,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
-  }).addTo(map);
-  movingMarker = L.marker([0, 0], {
-    icon: L.divIcon({
-      className: "",
-      html: `
-        <div class="moving-pin" role="img" aria-label="가이드 순찬">
-          <span class="vehicle-back" aria-hidden="true"></span>
-          <span class="guide-face" aria-hidden="true"></span>
-          <svg class="vehicle-art cable-car-art" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M3 5H61" />
-            <path d="M32 5V16" />
-            <path d="M25 16H39" />
-            <rect x="8" y="18" width="48" height="39" rx="11" />
-            <path d="M11 45H53" />
-          </svg>
-        </div>
-      `,
-      iconSize: [64, 64],
-      iconAnchor: [32, 32]
-    }),
-    interactive: false,
-    opacity: 0,
-    zIndexOffset: 1000
   }).addTo(map);
 }
 
@@ -724,7 +691,6 @@ function buildFilters() {
       renderMap();
       renderSteps();
       updateCurrentStep();
-      setMarkerToStepStart();
     });
     layerFilters.appendChild(button);
   });
@@ -755,10 +721,8 @@ function renderVariants() {
     button.type = "button";
     button.textContent = variant.label;
     button.addEventListener("click", () => {
-      stopPlayback();
       activeVariants[route.id] = variant.id;
       activeStepIndex = 0;
-      segmentProgress = 0;
       renderRoute();
     });
     variantButtons.appendChild(button);
@@ -818,12 +782,10 @@ function getVisibleImportedTrack(route) {
 }
 
 function selectRoute(index) {
-  stopPlayback();
   setMapStepSheetOpen(false);
   activeRouteIndex = index;
   activeStepIndex = 0;
   activeLayer = "all";
-  segmentProgress = 0;
   renderRoute();
 }
 
@@ -846,7 +808,6 @@ function renderRoute() {
   renderPois();
   loadWeather(route);
   updateCurrentStep();
-  setMarkerToStepStart();
 }
 
 function renderSummary(route) {
@@ -869,7 +830,7 @@ function renderSummary(route) {
   `;
 }
 
-function renderMap() {
+function renderMap({ focusActiveStep = false } = {}) {
   clearMap();
   const route = routeData[activeRouteIndex];
   const importedTrack = getVisibleImportedTrack(route);
@@ -877,6 +838,7 @@ function renderMap() {
   const boundsPoints = [];
   const trackStepSegments = buildTrackStepSegments(importedTrack, visibleSteps);
   let activeLine = null;
+  let activeLineCoords = null;
 
   if (importedTrack?.coords.length) {
     importedTrackLayer = L.polyline(importedTrack.coords, {
@@ -905,7 +867,10 @@ function renderMap() {
     line.on("click", () => selectStep(index));
     drawnLayers.push(line);
     boundsPoints.push(...lineCoords);
-    if (isActive) activeLine = line;
+    if (isActive) {
+      activeLine = line;
+      activeLineCoords = lineCoords;
+    }
   });
 
   activeLine?.bringToFront();
@@ -925,8 +890,23 @@ function renderMap() {
     boundsPoints.push(coord);
   });
 
-  const bounds = L.latLngBounds(boundsPoints);
-  map.fitBounds(bounds, { padding: [28, 28], maxZoom: route.zoom });
+  const mobileBottomPadding = window.matchMedia("(max-width: 1023px)").matches ? 110 : 28;
+  const hiddenStepFocus = focusActiveStep && !activeLineCoords
+    ? getMapHiddenStepFocus(route, getActiveStep())
+    : null;
+
+  if (focusActiveStep && activeLineCoords?.length) {
+    map.fitBounds(L.latLngBounds(activeLineCoords), {
+      paddingTopLeft: [28, 28],
+      paddingBottomRight: [28, mobileBottomPadding],
+      maxZoom: 16,
+      animate: true
+    });
+  } else if (hiddenStepFocus) {
+    map.setView(hiddenStepFocus, Math.max(route.zoom, 15), { animate: true });
+  } else {
+    map.fitBounds(L.latLngBounds(boundsPoints), { padding: [28, 28], maxZoom: route.zoom });
+  }
   window.setTimeout(() => map.invalidateSize(), 50);
 }
 
@@ -947,6 +927,13 @@ function pointModeForIndex(route, index) {
 
 function sameCoord(a, b) {
   return Math.abs(a[0] - b[0]) < 0.00001 && Math.abs(a[1] - b[1]) < 0.00001;
+}
+
+function getMapHiddenStepFocus(route, step) {
+  if (!step.mapHidden) return null;
+  const visiblePoiCoords = getMapPoiIndices(route).map(index => route.pois[index][2]);
+  const endpoints = [step.coords[0], step.coords.at(-1)];
+  return endpoints.find(endpoint => visiblePoiCoords.some(coord => sameCoord(coord, endpoint))) || null;
 }
 
 function buildTrackStepSegments(importedTrack, visibleSteps) {
@@ -976,14 +963,11 @@ function findClosestTrackIndex(coords, target, startIndex = 0) {
 }
 
 function selectStep(index) {
-  stopPlayback();
   setMapStepSheetOpen(false);
   activeStepIndex = index;
-  segmentProgress = 0;
-  renderMap();
+  renderMap({ focusActiveStep: true });
   renderSteps();
   updateCurrentStep();
-  setMarkerToStepStart();
 }
 
 function renderSteps() {
@@ -1143,103 +1127,6 @@ function selectAdjacentStep(offset) {
   selectStep(nextIndex);
 }
 
-function setMarkerToStepStart() {
-  movingMarker.setOpacity(isPlaying ? 1 : 0);
-  const importedTrack = getVisibleImportedTrack(routeData[activeRouteIndex]);
-  if (importedTrack?.coords.length && importedPlayback) {
-    movingMarker.setLatLng(importedTrack.coords[0]);
-    return;
-  }
-  const point = getActiveStep().coords[0];
-  movingMarker.setLatLng(point);
-}
-
-function updateMarker() {
-  movingMarker.setOpacity(1);
-  const route = routeData[activeRouteIndex];
-  const importedTrack = getVisibleImportedTrack(route);
-  if (importedTrack?.coords.length && importedPlayback) {
-    const position = interpolateCoords(importedTrack.coords, segmentProgress);
-    movingMarker.setLatLng(position);
-    updateMovingMarkerMode(getClosestStepMode(route, position));
-    return;
-  }
-
-  const step = getActiveStep();
-  movingMarker.setLatLng(interpolateCoords(step.coords, segmentProgress));
-  updateMovingMarkerMode(step.mode);
-}
-
-function updateMovingMarkerMode(mode) {
-  const marker = movingMarker.getElement()?.querySelector(".moving-pin");
-  if (!marker) return;
-  marker.classList.toggle("cable-mode", mode === "cable");
-  marker.classList.toggle("lift-mode", mode === "lift");
-  const rideLabel = mode === "lift" ? "리프트" : mode === "cable" ? "케이블카" : null;
-  marker.setAttribute("aria-label", rideLabel ? `${rideLabel}를 타는 가이드 순찬` : "이동 중인 가이드 순찬");
-}
-
-function getClosestStepMode(route, position) {
-  const steps = getVisibleSteps(route).filter(({ step }) => !step.mapHidden);
-  let closestMode = steps[0]?.step.mode || "trail";
-  let closestDistance = Number.POSITIVE_INFINITY;
-
-  steps.forEach(({ step }) => {
-    const stepDistance = distanceToPath(position, step.coords);
-    if (stepDistance < closestDistance) {
-      closestDistance = stepDistance;
-      closestMode = step.mode;
-    }
-  });
-  return closestMode;
-}
-
-function distanceToPath(point, coords) {
-  if (coords.length < 2) return distance(point, coords[0]);
-  let closestDistance = Number.POSITIVE_INFINITY;
-
-  for (let index = 0; index < coords.length - 1; index += 1) {
-    const start = [coords[index][1] * 74, coords[index][0] * 111];
-    const end = [coords[index + 1][1] * 74, coords[index + 1][0] * 111];
-    const target = [point[1] * 74, point[0] * 111];
-    const dx = end[0] - start[0];
-    const dy = end[1] - start[1];
-    const lengthSquared = dx * dx + dy * dy;
-    const ratio = lengthSquared === 0
-      ? 0
-      : Math.max(0, Math.min(1, ((target[0] - start[0]) * dx + (target[1] - start[1]) * dy) / lengthSquared));
-    const projected = [start[0] + dx * ratio, start[1] + dy * ratio];
-    closestDistance = Math.min(closestDistance, Math.hypot(target[0] - projected[0], target[1] - projected[1]));
-  }
-  return closestDistance;
-}
-
-function interpolateCoords(coords, progress) {
-  if (coords.length === 1) return coords[0];
-
-  const segments = [];
-  let totalLength = 0;
-  for (let i = 0; i < coords.length - 1; i += 1) {
-    const length = distance(coords[i], coords[i + 1]);
-    segments.push(length);
-    totalLength += length;
-  }
-
-  let target = totalLength * progress;
-  for (let i = 0; i < segments.length; i += 1) {
-    if (target <= segments[i]) {
-      const ratio = segments[i] === 0 ? 0 : target / segments[i];
-      return [
-        coords[i][0] + (coords[i + 1][0] - coords[i][0]) * ratio,
-        coords[i][1] + (coords[i + 1][1] - coords[i][1]) * ratio
-      ];
-    }
-    target -= segments[i];
-  }
-
-  return coords[coords.length - 1];
-}
-
 function distance(a, b) {
   return Math.hypot((b[0] - a[0]) * 111, (b[1] - a[1]) * 74);
 }
@@ -1250,83 +1137,6 @@ function stepDistanceKm(coords) {
     total += distance(coords[i], coords[i + 1]);
   }
   return total;
-}
-
-function startPlayback() {
-  stopPlayback(false);
-  setMapStepSheetOpen(false);
-  const route = routeData[activeRouteIndex];
-  const playbackStepIndices = getVisibleSteps(route)
-    .map(({ step }, index) => ({ step, index }))
-    .filter(({ step }) => !step.mapHidden)
-    .map(({ index }) => index);
-  let playbackPosition = 0;
-  isPlaying = true;
-  activeStepIndex = playbackStepIndices[0] ?? 0;
-  segmentProgress = 0;
-  importedPlayback = Boolean(route.trackPlayback && getVisibleImportedTrack(route)?.coords.length);
-  playIcon.textContent = "■";
-  playLabel.textContent = "정지";
-  playButton.setAttribute("aria-label", "코스 재생 정지");
-  renderMap();
-  renderSteps();
-  updateCurrentStep();
-  updateMarker();
-
-  playTimer = window.setInterval(() => {
-    segmentProgress += importedPlayback ? 0.006 : 0.014;
-
-    if (importedPlayback) {
-      if (segmentProgress >= 1) {
-        segmentProgress = 1;
-        updateMarker();
-        stopPlayback();
-        return;
-      }
-      updateMarker();
-      return;
-    }
-
-    if (segmentProgress >= 1) {
-      segmentProgress = 0;
-      playbackPosition += 1;
-
-      if (playbackPosition >= playbackStepIndices.length) {
-        activeStepIndex = playbackStepIndices.at(-1) ?? 0;
-        segmentProgress = 1;
-        renderMap();
-        renderSteps();
-        updateCurrentStep();
-        updateMarker();
-        stopPlayback();
-        return;
-      }
-
-      activeStepIndex = playbackStepIndices[playbackPosition];
-
-      renderMap();
-      renderSteps();
-      updateCurrentStep();
-    }
-
-    updateMarker();
-  }, 28);
-}
-
-function stopPlayback(resetButton = true) {
-  if (playTimer) {
-    window.clearInterval(playTimer);
-    playTimer = null;
-  }
-  isPlaying = false;
-  importedPlayback = false;
-  movingMarker.setOpacity(0);
-
-  if (resetButton) {
-    playIcon.textContent = "▶";
-    playLabel.textContent = "코스 재생";
-    playButton.setAttribute("aria-label", "코스 재생");
-  }
 }
 
 async function loadWeather(route) {
@@ -1495,7 +1305,6 @@ async function loadBuiltInTracks() {
   }));
 
   renderMap();
-  setMarkerToStepStart();
 }
 
 function prepareBuiltInTrack(route, track) {
@@ -1587,16 +1396,6 @@ function parseKmlCoords(doc) {
 function isValidCoord(coord) {
   return Number.isFinite(coord[0]) && Number.isFinite(coord[1]);
 }
-
-playButton.addEventListener("click", () => {
-  if (isPlaying) {
-    stopPlayback();
-    renderMap();
-    renderSteps();
-    return;
-  }
-  startPlayback();
-});
 
 mapCurrentStep.addEventListener("click", () => {
   setMapStepSheetOpen(!isMapStepSheetOpen);

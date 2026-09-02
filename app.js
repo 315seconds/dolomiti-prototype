@@ -101,7 +101,7 @@ const routeData = [
     day: "Day 2",
     title: "마르몰라다 & 사쓰 포르도이",
     backgroundImage: "assets/02-marmolada-map.jpg",
-    summary: "Alba에서 Col dei Rossi와 Fredarola까지 함께 이동한 뒤 A팀은 Passo Pordoi로 바로 가고, B팀은 Viel dal Pan을 왕복한 뒤 같은 길에 합류합니다. 전원 Sass Pordoi 전망대를 왕복하고 하부역 앞 주차장에서 단체 버스로 QC Terme와 숙소로 이동합니다.",
+    summary: "숙소에서 버스로 Alba까지 이동한 뒤 Col dei Rossi와 Fredarola까지 함께 이동합니다. A팀은 Passo Pordoi로 바로 가고, B팀은 Viel dal Pan을 왕복한 뒤 같은 길에 합류합니다. 전원 Sass Pordoi 전망대를 왕복하고 하부역 앞 주차장에서 단체 버스로 QC Terme와 숙소로 이동합니다.",
     center: [46.4823, 11.8241],
     zoom: 13,
     weather: { name: "Rifugio Viel dal Pan", coords: [46.474215, 11.834069] },
@@ -131,6 +131,16 @@ const routeData = [
       ["숙소", "온천 후 복귀", [46.4309, 11.6934]]
     ],
     steps: [
+      {
+        range: "출발 · 버스",
+        group: "common",
+        title: "숙소 → Alba",
+        mode: "car",
+        meta: "공통 · 버스 이동 · 일정 시작",
+        note: "숙소에서 단체 버스를 타고 Alba 케이블카 탑승장까지 이동합니다. 이 차량 이동 구간은 트레킹 지도에 표시되지 않습니다.",
+        mapHidden: true,
+        coords: [[46.4309, 11.6934], [46.457509, 11.788861]]
+      },
       {
         range: "공통 1→2",
         group: "common",

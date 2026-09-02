@@ -116,7 +116,7 @@ POI 흐름:
 공통:
 
 ```text
-Alba → Col dei Rossi → Rifugio Fredarola
+숙소 → Alba → Col dei Rossi → Rifugio Fredarola
 ```
 
 A팀 가벼운 코스:
@@ -163,7 +163,8 @@ Alba → Col dei Rossi → Fredarola
 ```
 
 - 원본은 총 434개 트랙 포인트, 약 9.74km
-- 첫 구간은 Alba에서 Col dei Rossi까지의 케이블카 직선 이동
+- GPX 첫 구간은 Alba에서 Col dei Rossi까지의 케이블카 직선 이동
+- 숙소에서 Alba까지의 버스 이동은 일정에 포함하지만 트레킹 지도에는 표시하지 않음
 - A팀 선택 시 Viel dal Pan 왕복을 제외한 163포인트 경로 표시
 - B팀 선택 시 Viel dal Pan 왕복을 포함한 434포인트 전체 경로 표시
 - 두 팀 모두 Passo Pordoi 하부역에서 Sass Pordoi 전망대를 케이블카로 왕복

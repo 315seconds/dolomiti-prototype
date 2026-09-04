@@ -1,7 +1,8 @@
 const colors = {
   trail: "#d85149",
   cable: "#4b9ecf",
-  lift: "#d8a62b",
+  lift: "#4b9ecf",
+  bus: "#7c3aed",
   car: "#57a575"
 };
 
@@ -10,58 +11,111 @@ const labels = {
   trail: "트레킹",
   cable: "케이블카",
   lift: "리프트",
+  bus: "버스",
   car: "차량"
 };
 
 const poiPhotos = {
+  novaLevante: {
+    src: "assets/poi/day2-nova-levante.png",
+    alt: "노바레반테 마을과 케이블카 출발 지점"
+  },
+  malgaFrommer: {
+    src: "assets/poi/day2-malga-frommer.png",
+    alt: "말가 프롬머 케이블카 환승 지점"
+  },
   koelnerHuette: {
-    src: "assets/poi/day1-koelner-huette.jpg",
-    alt: "로젠가르텐 암벽 아래의 쾰너 산장",
-    author: "Cm95",
-    license: "CC BY-SA 3.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
-    source: "https://commons.wikimedia.org/wiki/File:K%C3%B6lner_H%C3%BCtte_vor_Rosengarten.jpg"
+    src: "assets/poi/day2-koelner-huette.png",
+    alt: "로젠가르텐 암벽 아래의 쾰너 산장"
   },
   paolinaHuette: {
-    src: "assets/poi/day1-paolina-huette.jpg",
-    alt: "파올리나 산장과 리프트 승강장",
-    author: "Petr1888",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    source: "https://commons.wikimedia.org/wiki/File:Paolinah%C3%BCtte_in_July_2015_02.jpg"
+    src: "assets/poi/day2-paolina.png",
+    alt: "파올리나 산장과 리프트 승강장"
   },
-  carezzaLake: {
-    src: "assets/poi/day1-carezza-lake.jpg",
-    alt: "숲과 로젠가르텐 산군이 비치는 카레짜 호수",
-    author: "Linguaddict",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    source: "https://commons.wikimedia.org/wiki/File:Lago_di_Carezza%3B_Karersee.jpg"
+  alba: {
+    src: "assets/poi/day3-alba.png",
+    alt: "알바 케이블카 출발 지점"
+  },
+  colDeiRossi: {
+    src: "assets/poi/day3-col-dei-rossi.png",
+    alt: "콜 데이 로시 케이블카 상부 지점"
+  },
+  fredarola: {
+    src: "assets/poi/day3-rifugio-fredarola.png",
+    alt: "리푸지오 프레다롤라 산장"
   },
   vielDalPan: {
-    src: "assets/poi/day2-viel-dal-pan.jpg",
-    alt: "마르몰라다를 마주 보는 비엘 달 판 산장",
-    author: "Pimlico27",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    source: "https://commons.wikimedia.org/wiki/File:Marmolada_and_Rifugio_Viel_Dal_Pan.jpg"
+    src: "assets/poi/day3-rifugio-viel-dal-pan.png",
+    alt: "마르몰라다를 마주 보는 비엘 달 판 산장"
   },
   passoPordoi: {
-    src: "assets/poi/day2-passo-pordoi.jpg",
-    alt: "포르도이 고개의 사쓰 포르도이 케이블카 하부역",
-    author: "Adert",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    source: "https://commons.wikimedia.org/wiki/File:Sass_Pordoi_-_funivia.jpg"
+    src: "assets/poi/day3-passo-pordoi.png",
+    alt: "포르도이 고개의 사쓰 포르도이 케이블카 하부역"
   },
-  sassPordoi: {
-    src: "assets/poi/day2-sass-pordoi.jpg",
-    alt: "사쓰 포르도이 케이블카 상부역과 전망",
-    author: "Z thomas",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    source: "https://commons.wikimedia.org/wiki/File:Seilbahn_Sass_pordoi_Bergstation_2019-09-03_2.jpg"
+  ortisei: {
+    src: "assets/poi/day4-ortisei.png",
+    alt: "오르티세이 마을과 케이블카 출발 지점"
+  },
+  seceda: {
+    src: "assets/poi/day4-seceda.png",
+    alt: "세체다 케이블카 상부 지역"
+  },
+  secedaCross: {
+    src: "assets/poi/day4-seceda-cross.png",
+    alt: "세체다 크로스 능선 전망 포인트"
+  },
+  baitaTroier: {
+    src: "assets/poi/day4-baita-troier.png",
+    alt: "바이타 트로이어 산장"
+  },
+  malgaPieralongia: {
+    src: "assets/poi/day4-malga-pieralongia.png",
+    alt: "말가 피에라론지아 산장"
+  },
+  alpeCableLower: {
+    src: "assets/poi/day5-a-cable-lower.png",
+    alt: "오르티세이 알페 디 시우시 케이블카 승차 지점"
+  },
+  montSeucUpper: {
+    src: "assets/poi/day5-b-cable-upper.png",
+    alt: "몬트 세우크 케이블카 상부역"
+  },
+  wiednerEggJunction: {
+    src: "assets/poi/day5-e-junction.png",
+    alt: "비트너 에크 버스 표지판이 있는 갈림길"
+  },
+  florian: {
+    src: "assets/poi/day5-f-florian.png",
+    alt: "플로리안 곤돌라 하부역"
+  },
+  wildOWilliams: {
+    src: "assets/poi/day5-wild-o-williams.png",
+    alt: "와일드 오 윌리엄스 산장"
+  },
+  saltriaBus: {
+    src: "assets/poi/day5-h-bus-11.png",
+    alt: "살트리아에서 탑승하는 11번 버스"
+  },
+  ritschStop: {
+    src: "assets/poi/day5-s-ritsch-stop.png",
+    alt: "리치 버스 정류소"
+  },
+  sanonJunction: {
+    src: "assets/poi/day5-t-junction.png",
+    alt: "호텔 사논 방향으로 우회전하는 갈림길"
+  },
+  sonneLift: {
+    src: "assets/poi/day5-sporthotel-sonne-lift.png",
+    alt: "스포트호텔 존네 옆 리프트"
   }
+};
+
+const recommendedMenus = {
+  baitaTroier: [
+    { name: "슈니첼", photo: "assets/food/day4-troier-schnitzel.jpg" },
+    { name: "굴라쉬", photo: "assets/food/day4-troier-goulash.jpg" },
+    { name: "알리오 올리오", photo: "assets/food/day4-troier-aglio-olio.jpg" }
+  ]
 };
 
 const routeData = [
@@ -78,12 +132,12 @@ const routeData = [
     trackFile: "assets/tracks/day-01-rosengarten.gpx",
     trackSource: "Outdooractive · Geotrail 9 to Karersee/Carezza via Kuregg/Monte Coronelle",
     pois: [
-      ["Nova Levante", "출발 지점", [46.432267, 11.54574]],
-      ["Malga Frommer", "케이블카 하차 · 곤돌라 환승", [46.4433, 11.5894]],
+      ["Nova Levante", "출발 지점", [46.432267, 11.54574], poiPhotos.novaLevante],
+      ["Malga Frommer", "케이블카 하차 · 곤돌라 환승", [46.4433, 11.5894], poiPhotos.malgaFrommer],
       ["Kölner Hütte", "곤돌라 상부 · 중식", [46.44233, 11.612015], poiPhotos.koelnerHuette],
       ["Paolina", "트레킹 도착 산장", [46.415716, 11.614615], poiPhotos.paolinaHuette],
       ["Carezza", "리프트 하부/버스 연결", [46.407956, 11.591893]],
-      ["Carezza/Karersee", "호수 산책", [46.40934, 11.57515], poiPhotos.carezzaLake]
+      ["Carezza/Karersee", "호수 산책", [46.40934, 11.57515]]
     ],
     steps: [
       {
@@ -172,12 +226,12 @@ const routeData = [
       { id: "b", label: "B팀 트레킹 코스", groups: ["common", "b", "join"] }
     ],
     pois: [
-      ["Alba", "케이블카 출발", [46.457509, 11.788861]],
-      ["Col dei Rossi", "케이블카 상부 하차", [46.474546, 11.802258]],
-      ["Rifugio Fredarola", "A/B팀 공통 산장", [46.477591, 11.814813]],
+      ["Alba", "케이블카 출발", [46.457509, 11.788861], poiPhotos.alba],
+      ["Col dei Rossi", "케이블카 상부 하차", [46.474546, 11.802258], poiPhotos.colDeiRossi],
+      ["Rifugio Fredarola", "A/B팀 공통 산장", [46.477591, 11.814813], poiPhotos.fredarola],
       ["Passo Pordoi", "A팀/B팀 합류 · 케이블카 하부역 · 버스 주차장", [46.488272, 11.810704], poiPhotos.passoPordoi],
       ["Rifugio Viel dal Pan", "B팀 왕복 지점", [46.474215, 11.834069], poiPhotos.vielDalPan],
-      ["Sass Pordoi", "전망대 · 자유시간", [46.500312, 11.807728], poiPhotos.sassPordoi],
+      ["Sass Pordoi", "전망대 · 자유시간", [46.500312, 11.807728]],
       ["QC Terme Dolomiti", "온천", [46.4276, 11.6865]],
       ["숙소", "온천 후 복귀", [46.4309, 11.6934]]
     ],
@@ -291,89 +345,165 @@ const routeData = [
     day: "4일차",
     title: "오르티세이 & 세체다",
     backgroundImage: "assets/03-seceda-map.jpg",
-    summary: "오르티세이에서 세체다 케이블카로 올라 Baita Sofie, Pieralongia, Troier, Fermeda 쪽 산장 루프를 돈 뒤 복귀합니다.",
-    center: [46.5925, 11.7308],
+    summary: "숙소에서 오르티세이로 이동해 케이블카로 세체다에 오른 뒤 Seceda Cross, Baita Troier, Pieralongia를 함께 둘러봅니다. Troier로 돌아온 뒤 쉬운 코스는 능선길로 바로 복귀하고, 도전 코스는 Baita Daniel, Mastle, Baita Sofie를 거쳐 상부역으로 돌아옵니다.",
+    center: [46.5975, 11.7355],
     zoom: 14,
-    weather: { name: "Seceda", coords: [46.6003, 11.7248] },
-    poiImage: "assets/seceda-poi.jpg",
+    weather: { name: "Seceda Cross", coords: [46.60064, 11.725747] },
+    poiImage: null,
+    trackFiles: {
+      easy: "assets/tracks/day-03-seceda-easy.gpx",
+      challenge: "assets/tracks/day-03-seceda-challenge.gpx"
+    },
+    trackSource: "Outdooractive · 사용자 공유 GPX · Ortisei → Seceda → Pieralongia 왕복",
+    variantTrailKm: { easy: 5.3, challenge: 5.6 },
+    variants: [
+      { id: "easy", label: "쉬운 복귀 코스", groups: ["common", "easy", "finish"] },
+      { id: "challenge", label: "도전 복귀 코스", groups: ["common", "challenge", "finish"] }
+    ],
+    variantPoiOrder: {
+      easy: [0, 1, 2, 3, 4, 8],
+      challenge: [0, 1, 2, 3, 4, 5, 6, 7]
+    },
     pois: [
-      ["Ortisei", "케이블카 하부", [46.5766, 11.6718]],
-      ["Seceda", "상부 능선", [46.6003, 11.7248]],
-      ["Baita Sofie", "산장", [46.597665, 11.727176]],
-      ["Baita Troier", "산장", [46.5908, 11.7358]],
-      ["Malga Pieralongia", "포토 포인트 산장", [46.597559, 11.740383]],
-      ["Baita Mastle", "산장", [46.5925, 11.7258]],
-      ["Baita Daniel", "산장", [46.5884, 11.7216]],
-      ["Baita Fermeda", "복귀 산장", [46.5893, 11.7256]],
-      ["Baita Cuca", "분기 산장 후보", [46.5868, 11.7181]],
-      ["Malga Neidia", "하단 산장 후보", [46.5836, 11.7128]],
-      ["Baita Odles", "복귀 동선 산장", [46.5911, 11.7185]],
-      ["Col Raiser", "리프트/케이블카 연결", [46.5867, 11.7314]],
-      ["Seceda Cross", "능선 사진 포인트", [46.6012, 11.724]]
+      ["Ortisei", "케이블카 하부역", [46.576378, 11.675055], poiPhotos.ortisei],
+      ["Seceda 상부역", "케이블카 하차 · 복귀 지점", [46.597863, 11.724404], poiPhotos.seceda],
+      ["Seceda Cross", "능선 전망 포인트", [46.60064, 11.725747], poiPhotos.secedaCross],
+      ["Baita Troier", "점심 식사 · 공통 반환점", [46.597963, 11.739402], poiPhotos.baitaTroier, recommendedMenus.baitaTroier],
+      ["Malga Pieralongia", "산장 · 오들 산군 전망", [46.597357, 11.747765], poiPhotos.malgaPieralongia],
+      ["Baita Daniel", "도전 코스 산장", [46.595154, 11.733403]],
+      ["Baita Mastle", "도전 코스 산장", [46.594792, 11.730089]],
+      ["Baita Sofie", "도전 코스 마지막 산장", [46.597556, 11.727201]],
+      ["쉬운 코스 갈림길", "직진해 상부역으로 복귀", [46.599862, 11.734731]]
     ],
     steps: [
       {
-        title: "Ortisei → Seceda",
+        range: "출발 · 버스",
+        group: "common",
+        title: "숙소 → Ortisei",
+        mode: "car",
+        meta: "공통 · 버스 이동 · 일정 시작",
+        note: "숙소에서 단체 버스로 오르티세이 케이블카 하부역까지 이동합니다. 차량 경로는 트레킹 지도에 표시하지 않습니다.",
+        mapHidden: true,
+        coords: [[46.4309, 11.6934], [46.576378, 11.675055]]
+      },
+      {
+        range: "공통 1→2",
+        group: "common",
+        title: "Ortisei → Seceda 상부역",
         mode: "cable",
-        meta: "케이블카 · 고도 상승",
-        note: "오르티세이에서 세체다 능선으로 오르는 접근 이동입니다.",
-        coords: [[46.5766, 11.6718], [46.5945, 11.7053], [46.6003, 11.7248]]
+        meta: "공통 · 케이블카 이동",
+        note: "오르티세이에서 케이블카를 타고 세체다 상부역까지 올라갑니다.",
+        coords: [[46.576378, 11.675055], [46.589836, 11.702242], [46.597863, 11.724404]]
       },
       {
-        title: "Seceda → Baita Sofie",
+        range: "공통 2→3",
+        group: "common",
+        title: "Seceda 상부역 → Seceda Cross",
         mode: "trail",
-        meta: "트레킹 · 능선 시작",
-        note: "상부 능선에서 식사 후보 산장으로 짧게 연결됩니다.",
-        coords: [[46.6003, 11.7248], [46.597665, 11.727176]]
+        meta: "공통 · 능선 전망 구간",
+        note: "상부역에서 세체다 능선의 대표 전망 포인트인 Seceda Cross까지 이동합니다.",
+        coords: [[46.597863, 11.724404], [46.60064, 11.725747]]
       },
       {
-        title: "Baita Sofie → Baita Troier",
+        range: "공통 3→4",
+        group: "common",
+        title: "Seceda Cross → Baita Troier",
         mode: "trail",
-        meta: "트레킹 · 산장 연결",
-        note: "상부 산장 라인에서 Troier 방향으로 내려서는 첫 분기 구간입니다.",
-        coords: [[46.597665, 11.727176], [46.5944, 11.7318], [46.5908, 11.7358]]
+        meta: "공통 · 점심 식사",
+        note: "능선 풍경을 보며 Baita Troier까지 내려가 보통 이곳에서 점심을 먹습니다.",
+        coords: [[46.60064, 11.725747], [46.597963, 11.739402]]
       },
       {
-        title: "Baita Troier → Pieralongia",
+        range: "공통 4→5",
+        group: "common",
+        title: "Baita Troier → Malga Pieralongia",
         mode: "trail",
-        meta: "트레킹 · 포토 포인트",
-        note: "피에라론지아 바위와 오들 산군을 보는 핵심 포토 구간입니다.",
-        coords: [[46.5908, 11.7358], [46.5941, 11.7396], [46.597559, 11.740383]]
+        meta: "공통 · 산장과 전망 포인트",
+        note: "점심 후 Pieralongia 산장으로 이동해 주변 풍경과 오들 산군을 둘러봅니다.",
+        coords: [[46.597963, 11.739402], [46.597357, 11.747765]]
       },
       {
-        title: "Pieralongia → Mastle",
+        range: "공통 5→4",
+        group: "common",
+        title: "Malga Pieralongia → Baita Troier",
         mode: "trail",
-        meta: "트레킹 · 루프 반환점",
-        note: "참고사진의 산장 목록 중 Mastle 방향으로 돌아나오는 구간입니다.",
-        coords: [[46.597559, 11.740383], [46.5961, 11.7337], [46.5925, 11.7258]]
+        meta: "공통 · 같은 길 복귀",
+        note: "Pieralongia에서 왔던 길을 따라 Baita Troier까지 되돌아온 뒤 복귀 코스를 선택합니다.",
+        coords: [[46.597357, 11.747765], [46.597939, 11.739536]]
       },
       {
-        title: "Mastle → Daniel → Fermeda",
+        range: "도전 4→6",
+        group: "challenge",
+        title: "Baita Troier → Baita Daniel",
         mode: "trail",
-        meta: "트레킹 · 하단 산장 라인",
-        note: "Daniel과 Fermeda를 지나 세체다 복귀 또는 Col Raiser 분기로 이어집니다.",
-        coords: [[46.5925, 11.7258], [46.5884, 11.7216], [46.5893, 11.7256]]
+        meta: "도전 코스 · 오르막 시작",
+        note: "조금 더 힘든 길을 선택한 팀은 Troier에서 Baita Daniel 방향으로 이동합니다.",
+        coords: [[46.597939, 11.739536], [46.595154, 11.733403]]
       },
       {
-        title: "Fermeda → Cuca → Neidia",
+        range: "도전 6→7",
+        group: "challenge",
+        title: "Baita Daniel → Baita Mastle",
         mode: "trail",
-        meta: "트레킹 · 확장 후보",
-        note: "컨디션에 따라 더 넓게 돌 수 있는 하단 산장 후보 구간입니다.",
-        coords: [[46.5893, 11.7256], [46.5868, 11.7181], [46.5836, 11.7128]]
+        meta: "도전 코스 · 산장 연결",
+        note: "Baita Daniel을 지나 Baita Mastle까지 오르막을 이어갑니다.",
+        coords: [[46.595154, 11.733403], [46.594792, 11.730089]]
       },
       {
-        title: "Neidia → Odles → Col Raiser",
+        range: "도전 7→8",
+        group: "challenge",
+        title: "Baita Mastle → Baita Sofie",
         mode: "trail",
-        meta: "트레킹 · 리프트 연결",
-        note: "Odles와 Col Raiser 쪽으로 내려서는 대체 복귀 라인입니다.",
-        coords: [[46.5836, 11.7128], [46.5911, 11.7185], [46.5867, 11.7314]]
+        meta: "도전 코스 · 마지막 산장",
+        note: "Mastle에서 Baita Sofie까지 올라 마지막으로 쉬어간 뒤 상부역으로 향합니다.",
+        coords: [[46.594792, 11.730089], [46.597556, 11.727201]]
       },
       {
-        title: "Seceda → Ortisei",
+        range: "도전 8→2",
+        group: "challenge",
+        title: "Baita Sofie → Seceda 상부역",
+        mode: "trail",
+        meta: "도전 코스 · 케이블카 복귀",
+        note: "Baita Sofie에서 마지막 오르막을 지나 케이블카 상부역으로 돌아옵니다.",
+        coords: [[46.597556, 11.727201], [46.597883, 11.724388]]
+      },
+      {
+        range: "쉬운 4→6",
+        group: "easy",
+        title: "Baita Troier → 직진 갈림길",
+        mode: "trail",
+        meta: "쉬운 코스 · 완만한 복귀",
+        note: "Troier에서 산장 순환길로 내려가지 않고 상부역 방향의 완만한 길을 따라 직진합니다.",
+        coords: [[46.597939, 11.739536], [46.599862, 11.734731]]
+      },
+      {
+        range: "쉬운 6→2",
+        group: "easy",
+        title: "직진 갈림길 → Seceda 상부역",
+        mode: "trail",
+        meta: "쉬운 코스 · 상부역 복귀",
+        note: "능선 아래쪽 길을 이어 걸어 케이블카 상부역으로 바로 돌아옵니다.",
+        coords: [[46.599862, 11.734731], [46.597876, 11.724394]]
+      },
+      {
+        range: "하산 · 케이블카",
+        group: "finish",
+        title: "Seceda 상부역 → Ortisei",
         mode: "cable",
-        meta: "케이블카 · 호텔 이동 전 복귀",
-        note: "케이블카로 오르티세이 복귀 후 몬테 파나 호텔로 이동합니다.",
-        coords: [[46.6003, 11.7248], [46.5945, 11.7053], [46.5766, 11.6718]]
+        meta: "공통 · 케이블카 하산",
+        note: "상부역에서 케이블카를 타고 오르티세이로 내려옵니다.",
+        approximateConnector: true,
+        coords: [[46.597863, 11.724404], [46.589836, 11.702242], [46.576378, 11.675055]]
+      },
+      {
+        range: "마무리 · 버스",
+        group: "finish",
+        title: "Ortisei → 숙소",
+        mode: "car",
+        meta: "공통 · 버스 이동 · 일정 종료",
+        note: "오르티세이에서 단체 버스를 타고 숙소로 복귀합니다. 차량 경로는 트레킹 지도에 표시하지 않습니다.",
+        mapHidden: true,
+        coords: [[46.576378, 11.675055], [46.4309, 11.6934]]
       }
     ]
   },
@@ -382,93 +512,231 @@ const routeData = [
     day: "5일차",
     title: "알페 디 시우시",
     backgroundImage: "assets/04-alpe-siusi-map.jpg",
-    summary: "Ortisei에서 Mont Seuc로 오른 뒤 Sanon, Hotel Ritsch, Saltria 방향으로 고원 루프를 걷고 Florian 리프트를 선택 구간으로 둡니다.",
-    center: [46.5484, 11.6515],
+    summary: "숙소에서 오르티세이로 이동해 Mont Sëuc 케이블카로 고원에 오른 뒤 Florian까지 걷고 Wild O’Williams 산장을 왕복합니다. 쉬운 코스는 11번 버스와 Sanon 길을 이용하고, 도전 코스는 Saltria와 Brunelle 사이 고원길을 계속 걸어 Sporthotel Sonne에서 합류합니다.",
+    center: [46.5438, 11.6606],
     zoom: 13,
-    weather: { name: "Mont Seuc", coords: [46.558123, 11.664884] },
-    poiImage: "assets/alpe-siusi-poi.jpg",
+    weather: { name: "Alpe di Siusi", coords: [46.545905, 11.6477] },
+    poiImage: null,
+    trackFiles: {
+      easy: "assets/tracks/day-04-alpe-siusi.gpx",
+      challenge: "assets/tracks/day-04-alpe-siusi-hard.gpx"
+    },
+    trackSource: "Outdooractive · 사용자 공유 GPX · Mont Sëuc → Florian → Saltria → Ritsch → Sporthotel Sonne",
+    variantTrailKm: { easy: 8.6, challenge: 8.9 },
+    variants: [
+      { id: "easy", label: "쉬운 코스", groups: ["common", "easy", "finish"] },
+      { id: "challenge", label: "도전 코스", groups: ["common", "challenge", "finish"] }
+    ],
+    variantPoiOrder: {
+      easy: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      challenge: [0, 1, 2, 3, 4, 11, 9, 10]
+    },
     pois: [
-      ["Ortisei", "케이블카 하부", [46.5766, 11.6718]],
-      ["Mont Seuc", "상부 승강장", [46.558123, 11.664884]],
-      ["Malga Contrin", "초반 산장 후보", [46.5539, 11.6531]],
-      ["Hotel Icaro", "고원 내부 호텔", [46.5455, 11.6621]],
-      ["Malga Schgaguler", "조망 산장", [46.5525, 11.6767]],
-      ["Baita Sanon", "산장", [46.547882, 11.65495]],
-      ["Hotel Ritsch", "고원 중심", [46.539398, 11.6452]],
-      ["Malga Rauch", "복귀 방향 산장", [46.5412, 11.6695]],
-      ["Saltria", "루프 원거리", [46.5307, 11.6609]],
-      ["Florian", "리프트 방향", [46.5318, 11.6777]]
+      ["Ortisei 케이블카 하부역", "A · 버스 주차장 앞 승차 지점", [46.573101, 11.671181], poiPhotos.alpeCableLower],
+      ["Mont Sëuc 상부역", "B/K/X · 케이블카 하차 및 최종 복귀", [46.558049, 11.664709], poiPhotos.montSeucUpper],
+      ["Wiedner Egg 갈림길", "E · Florian 방향으로 진행", [46.537848, 11.653879], poiPhotos.wiednerEggJunction],
+      ["Florian", "F · 곤돌라 하부역", [46.53132, 11.671119], poiPhotos.florian],
+      ["Wild O’Williams", "G · 전망 감상 및 추천 음식", [46.515406, 11.684711], poiPhotos.wildOWilliams],
+      ["Saltria 버스 정류장", "H · 현장 발권 후 11번 버스 탑승", [46.531719, 11.669259], poiPhotos.saltriaBus],
+      ["Ritsch 정류소", "S · 11번 버스 하차", [46.540491, 11.645572], poiPhotos.ritschStop],
+      ["Sanon 방향 갈림길", "T · 오른쪽 길로 진입", [46.542899, 11.646677], poiPhotos.sanonJunction],
+      ["Hotel Sanon", "U · 호텔을 지나 계속 이동", [46.547865, 11.655507]],
+      ["Sporthotel Sonne", "I/V · 호텔 옆 리프트 탑승", [46.553718, 11.663376], poiPhotos.sonneLift],
+      ["Sonne 리프트 상부", "J/W · 하차 후 Mont Sëuc 방향 도보", [46.557738, 11.663636]],
+      ["Saltria 도보 분기", "H · Brunelle 호텔 사이길로 진행", [46.531893, 11.66898]]
     ],
     steps: [
       {
-        title: "Ortisei → Mont Seuc",
+        range: "출발 · 버스",
+        group: "common",
+        title: "숙소 → Ortisei",
+        mode: "bus",
+        meta: "버스 이동 · 일정 시작",
+        note: "숙소에서 단체 버스를 타고 오르티세이 버스 주차장으로 이동합니다. 케이블카 승차장은 주차장 바로 앞에 있습니다.",
+        mapHidden: true,
+        coords: [[46.4309, 11.6934], [46.573101, 11.671181]]
+      },
+      {
+        range: "1→2",
+        group: "common",
+        title: "Ortisei → Mont Sëuc 상부역",
         mode: "cable",
         meta: "케이블카 · 고원 접근",
-        note: "오르티세이에서 알페 디 시우시 고원 위로 올라갑니다.",
-        coords: [[46.5766, 11.6718], [46.558123, 11.664884]]
+        note: "주차장 앞 A 지점에서 케이블카를 타고 B 지점인 Mont Sëuc 상부역에서 내립니다.",
+        coords: [[46.573101, 11.671181], [46.558049, 11.664709]]
       },
       {
-        title: "Mont Seuc → Malga Contrin",
+        range: "2→3",
+        group: "common",
+        title: "Mont Sëuc → 고원 전망길",
         mode: "trail",
-        meta: "트레킹 · 루프 시작",
-        note: "고원 초지로 들어서며 Contrin 산장 후보를 먼저 지납니다.",
-        coords: [[46.558123, 11.664884], [46.5539, 11.6531]]
+        meta: "트레킹 · 초원길 시작",
+        note: "케이블카 상부역에서 알페 디 시우시 고원 안쪽의 C 지점으로 걷기 시작합니다.",
+        coords: [[46.558049, 11.664709], [46.557992, 11.659039]]
       },
       {
-        title: "Contrin → Hotel Icaro",
+        range: "2→3",
+        group: "common",
+        title: "고원 전망길 → Piz 구간",
         mode: "trail",
-        meta: "트레킹 · 내부 루프",
-        note: "참고 지도에서 고원 안쪽으로 들어가는 중간 산장/호텔 구간입니다.",
-        coords: [[46.5539, 11.6531], [46.5455, 11.6621]]
+        meta: "트레킹 · 고원 횡단",
+        note: "초원과 산군 전망을 보며 C에서 D 지점까지 고원길을 이어갑니다.",
+        coords: [[46.557992, 11.659039], [46.545905, 11.6477]]
       },
       {
-        title: "Hotel Icaro → Malga Schgaguler",
+        range: "2→3",
+        group: "common",
+        title: "Piz 구간 → Wiedner Egg 갈림길",
         mode: "trail",
-        meta: "트레킹 · 북동쪽 분기",
-        note: "조망 산장 방향으로 살짝 돌아 루프의 입체감을 만듭니다.",
-        coords: [[46.5455, 11.6621], [46.5525, 11.6767]]
+        meta: "트레킹 · 주의 갈림길",
+        note: "D 지점을 지나 E의 Wiedner Egg 버스 표지판이 보이는 갈림길에 도착합니다. 준비된 사진의 화살표 방향으로 진행합니다.",
+        coords: [[46.545905, 11.6477], [46.537848, 11.653879]]
       },
       {
-        title: "Schgaguler → Baita Sanon",
+        range: "3→4",
+        group: "common",
+        title: "Wiedner Egg 갈림길 → Florian",
         mode: "trail",
-        meta: "트레킹 · 산장 연결",
-        note: "Schgaguler에서 Sanon으로 이어지는 산장 연결 구간입니다.",
-        coords: [[46.5525, 11.6767], [46.547882, 11.65495]]
+        meta: "트레킹 · 곤돌라 하부역",
+        note: "갈림길을 지나 F 지점인 Florian 곤돌라 하부역까지 계속 걷습니다.",
+        coords: [[46.537848, 11.653879], [46.53132, 11.671119]]
       },
       {
-        title: "Sanon → Hotel Ritsch",
-        mode: "trail",
-        meta: "트레킹 · 고원 중심",
-        note: "넓은 목초지와 완만한 길을 지나 Hotel Ritsch 방향으로 갑니다.",
-        coords: [[46.547882, 11.65495], [46.5427, 11.6492], [46.539398, 11.6452]]
-      },
-      {
-        title: "Hotel Ritsch → Saltria",
-        mode: "trail",
-        meta: "트레킹 · 남쪽 루프",
-        note: "고원 남쪽으로 크게 돌아 루프의 원거리 지점을 찍습니다.",
-        coords: [[46.539398, 11.6452], [46.5339, 11.6507], [46.5307, 11.6609]]
-      },
-      {
-        title: "Saltria → Malga Rauch",
-        mode: "trail",
-        meta: "트레킹 · 복귀 시작",
-        note: "Saltria에서 다시 고원 안쪽으로 올라오는 복귀 초반 구간입니다.",
-        coords: [[46.5307, 11.6609], [46.5412, 11.6695]]
-      },
-      {
-        title: "Malga Rauch → Mont Seuc",
-        mode: "trail",
-        meta: "트레킹 · 루프 완료",
-        note: "Rauch를 지나 출발점인 Mont Seuc 방향으로 복귀합니다.",
-        coords: [[46.5412, 11.6695], [46.5485, 11.675], [46.558123, 11.664884]]
-      },
-      {
-        title: "Florian 리프트 왕복",
+        range: "4→5",
+        group: "common",
+        title: "Florian → Wild O’Williams",
         mode: "lift",
-        meta: "리프트 · 선택 왕복",
-        note: "Florian 리프트 왕복을 별도 레이어로 표시해 선택 구간처럼 볼 수 있습니다.",
-        coords: [[46.5307, 11.6609], [46.5318, 11.6777], [46.5307, 11.6609]]
+        meta: "곤돌라 · 전망 산장 이동",
+        note: "Florian에서 곤돌라를 타고 올라 Wild O’Williams 산장에서 전망을 보고 추천 음식을 먹습니다.",
+        coords: [[46.53132, 11.671119], [46.515406, 11.684711]]
+      },
+      {
+        range: "5→4",
+        group: "common",
+        title: "Wild O’Williams → Florian",
+        mode: "lift",
+        meta: "곤돌라 · 같은 길 하산",
+        note: "산장 방문을 마친 뒤 Florian 곤돌라를 타고 F 지점으로 다시 내려옵니다.",
+        coords: [[46.515406, 11.684711], [46.531338, 11.671229]]
+      },
+      {
+        range: "4→6",
+        group: "easy",
+        title: "Florian → Saltria 버스 정류장",
+        mode: "trail",
+        meta: "짧은 도보 · 버스 환승",
+        note: "아까 지나왔던 길로 짧게 이동해 H 지점인 Saltria 버스 정류장으로 갑니다.",
+        coords: [[46.531338, 11.671229], [46.531719, 11.669259]]
+      },
+      {
+        range: "6→7",
+        group: "easy",
+        title: "Saltria → Ritsch 정류소",
+        mode: "bus",
+        meta: "11번 버스 · 현장 발권",
+        note: "정류장에서 티켓을 구입해 11번 버스를 탑니다. I부터 R까지의 경유 지점을 지나 S 지점인 Ritsch 정류소에서 내립니다.",
+        coords: [[46.531719, 11.669259], [46.540491, 11.645572]]
+      },
+      {
+        range: "7→8",
+        group: "easy",
+        title: "Ritsch 정류소 → Sanon 방향 갈림길",
+        mode: "trail",
+        meta: "트레킹 · 되돌아 걷기",
+        note: "버스가 지나온 길을 조금 되돌아 걸어 T 지점 갈림길까지 이동합니다.",
+        coords: [[46.540491, 11.645572], [46.542899, 11.646677]]
+      },
+      {
+        range: "8→9",
+        group: "easy",
+        title: "Sanon 방향 갈림길 → Hotel Sanon",
+        mode: "trail",
+        meta: "트레킹 · 우회전 주의",
+        note: "T 갈림길에서 준비된 사진처럼 오른쪽 길로 들어가 U 지점인 Hotel Sanon까지 걷습니다.",
+        coords: [[46.542899, 11.646677], [46.547865, 11.655507]]
+      },
+      {
+        range: "9→10",
+        group: "easy",
+        title: "Hotel Sanon → Sporthotel Sonne",
+        mode: "trail",
+        meta: "트레킹 · 리프트 탑승장 이동",
+        note: "Hotel Sanon을 지나 V 지점인 Sporthotel Sonne와 바로 옆 리프트 탑승장까지 이동합니다.",
+        coords: [[46.547865, 11.655507], [46.553718, 11.663376]]
+      },
+      {
+        range: "10→11",
+        group: "easy",
+        title: "Sporthotel Sonne → Sonne 리프트 상부",
+        mode: "lift",
+        meta: "리프트 · 고도 상승",
+        note: "Sporthotel Sonne 옆 리프트를 타고 W 지점까지 올라갑니다.",
+        coords: [[46.553718, 11.663376], [46.557738, 11.663636]]
+      },
+      {
+        range: "11→2",
+        group: "easy",
+        title: "Sonne 리프트 상부 → Mont Sëuc 상부역",
+        mode: "trail",
+        meta: "트레킹 · 케이블카 복귀",
+        note: "리프트에서 내린 뒤 아침에 케이블카에서 내렸던 X/B 지점까지 걸어갑니다.",
+        coords: [[46.557738, 11.663636], [46.557872, 11.664596]]
+      },
+      {
+        range: "4→6",
+        group: "challenge",
+        title: "Florian → Saltria 도보 분기",
+        mode: "trail",
+        meta: "도전 코스 · 도보 복귀 시작",
+        note: "Florian으로 내려온 뒤 버스를 타지 않고 H 지점에서 Saltria와 Brunelle 호텔 사이길로 들어갑니다.",
+        coords: [[46.531338, 11.671229], [46.531893, 11.66898]]
+      },
+      {
+        range: "6→7",
+        group: "challenge",
+        title: "Saltria 도보 분기 → Sporthotel Sonne",
+        mode: "trail",
+        meta: "도전 코스 · 고원길 연속 트레킹",
+        note: "11번 버스 대신 Saltria와 Brunelle 호텔 사이 고원길을 계속 걸어 I 지점인 Sporthotel Sonne까지 이동합니다.",
+        coords: [[46.531893, 11.66898], [46.55364, 11.663283]]
+      },
+      {
+        range: "7→8",
+        group: "challenge",
+        title: "Sporthotel Sonne → Sonne 리프트 상부",
+        mode: "lift",
+        meta: "도전 코스 · 리프트 이동",
+        note: "Sporthotel Sonne 옆 리프트를 타고 J 지점까지 올라갑니다.",
+        coords: [[46.55364, 11.663283], [46.557813, 11.663578]]
+      },
+      {
+        range: "8→2",
+        group: "challenge",
+        title: "Sonne 리프트 상부 → Mont Sëuc 상부역",
+        mode: "trail",
+        meta: "도전 코스 · 케이블카 복귀",
+        note: "리프트에서 내린 뒤 K 지점인 Mont Sëuc 케이블카 상부역까지 걸어갑니다.",
+        coords: [[46.557813, 11.663578], [46.557838, 11.66451]]
+      },
+      {
+        range: "2→1",
+        group: "finish",
+        title: "Mont Sëuc 상부역 → Ortisei",
+        mode: "cable",
+        meta: "케이블카 · 오르티세이 하산",
+        note: "Mont Sëuc 상부역에서 케이블카를 타고 오르티세이로 내려옵니다.",
+        approximateConnector: true,
+        coords: [[46.557872, 11.664596], [46.558049, 11.664709], [46.573101, 11.671181]]
+      },
+      {
+        range: "마무리 · 버스",
+        group: "finish",
+        title: "Ortisei → 숙소",
+        mode: "bus",
+        meta: "버스 이동 · 일정 종료",
+        note: "오르티세이 버스 주차장에서 단체 버스를 타고 숙소로 복귀합니다.",
+        mapHidden: true,
+        coords: [[46.573101, 11.671181], [46.4309, 11.6934]]
       }
     ]
   },
@@ -698,6 +966,10 @@ const poiImage = document.querySelector("#poiImage");
 const poiList = document.querySelector("#poiList");
 const poiToggleButton = document.querySelector("#poiToggleButton");
 const photoCredits = document.querySelector("#photoCredits");
+const foodPhotoDialog = document.querySelector("#foodPhotoDialog");
+const foodPhotoDialogImage = document.querySelector("#foodPhotoDialogImage");
+const foodPhotoDialogCaption = document.querySelector("#foodPhotoDialogCaption");
+const closeFoodPhotoDialog = document.querySelector("#closeFoodPhotoDialog");
 const mapStepSheet = document.querySelector("#mapStepSheet");
 const mapCurrentStep = document.querySelector("#mapCurrentStep");
 const mapStepDetailMeta = document.querySelector("#mapStepDetailMeta");
@@ -876,9 +1148,12 @@ function renderRoute() {
 
 function renderSummary(route) {
   const steps = getVisibleSteps(route).map(({ step }) => step);
-  const trailKm = steps
-    .filter(step => step.mode === "trail")
-    .reduce((sum, step) => sum + stepDistanceKm(step.coords), 0);
+  const configuredTrailKm = route.variantTrailKm?.[getActiveVariantId(route)] ?? route.trailKm;
+  const trailKm = Number.isFinite(configuredTrailKm)
+    ? configuredTrailKm
+    : steps
+      .filter(step => step.mode === "trail")
+      .reduce((sum, step) => sum + stepDistanceKm(step.coords), 0);
   const flowModes = steps.reduce((modes, step) => {
     if (modes.at(-1) !== step.mode) modes.push(step.mode);
     return modes;
@@ -940,11 +1215,31 @@ function renderMap({ focusActiveStep = false } = {}) {
   activeLine?.bringToFront();
 
   getMapPoiIndices(route).forEach((poiIndex, displayIndex) => {
-    const [name, description, coord, photo] = route.pois[poiIndex];
+    const [name, description, coord, photo, recommendedMenu] = route.pois[poiIndex];
     const mode = pointModeForIndex(route, poiIndex);
+    const popupCredit = photo?.author && photo?.source && photo?.license && photo?.licenseUrl ? `
+      <small class="poi-popup-credit">사진: <a href="${photo.source}" target="_blank" rel="noopener">${photo.author}</a> · <a href="${photo.licenseUrl}" target="_blank" rel="noopener">${photo.license}</a></small>
+    ` : "";
     const popupPhoto = photo ? `
       <img class="poi-popup-image" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
-      <small class="poi-popup-credit">사진: <a href="${photo.source}" target="_blank" rel="noopener">${photo.author}</a> · <a href="${photo.licenseUrl}" target="_blank" rel="noopener">${photo.license}</a></small>
+      ${popupCredit}
+    ` : "";
+    const menuContent = recommendedMenu?.length ? `
+      <details class="poi-menu-disclosure">
+        <summary class="poi-menu-toggle">추천 메뉴</summary>
+        <div class="poi-menu-panel">
+          <div class="poi-menu-grid">
+            ${recommendedMenu.map(menu => `
+              <figure class="poi-menu-item">
+                <button class="poi-menu-photo-button" type="button" aria-label="${menu.name} 사진 크게 보기">
+                  <img src="${menu.photo}" alt="${name} 추천 메뉴 ${menu.name}" loading="lazy" decoding="async">
+                </button>
+                <figcaption>${menu.name}</figcaption>
+              </figure>
+            `).join("")}
+          </div>
+        </div>
+      </details>
     ` : "";
     const marker = L.marker(coord, {
       icon: L.divIcon({
@@ -953,7 +1248,23 @@ function renderMap({ focusActiveStep = false } = {}) {
         iconSize: [44, 44],
         iconAnchor: [22, 22]
       })
-    }).bindPopup(`${popupPhoto}<strong>${name}</strong><span>${description}</span>`).addTo(map);
+    }).bindPopup(`${popupPhoto}<strong>${name}</strong><span>${description}</span>${menuContent}`).addTo(map);
+    if (recommendedMenu?.length) {
+      marker.on("popupopen", event => {
+        event.popup.getElement()?.querySelectorAll(".poi-menu-photo-button").forEach(button => {
+          if (button.dataset.lightboxBound) return;
+          button.dataset.lightboxBound = "true";
+          button.addEventListener("click", clickEvent => {
+            clickEvent.stopPropagation();
+            const image = button.querySelector("img");
+            foodPhotoDialogImage.src = image.src;
+            foodPhotoDialogImage.alt = image.alt;
+            foodPhotoDialogCaption.textContent = image.alt;
+            foodPhotoDialog.showModal();
+          });
+        });
+      });
+    }
     poiMarkers.push(marker);
     boundsPoints.push(coord);
   });
@@ -1125,7 +1436,7 @@ function renderPois() {
 
   const creditedPois = poiIndices
     .map(index => ({ name: route.pois[index][0], photo: route.pois[index][3] }))
-    .filter(item => item.photo);
+    .filter(item => item.photo?.author && item.photo?.source && item.photo?.license && item.photo?.licenseUrl);
   photoCredits.hidden = creditedPois.length === 0;
   photoCredits.innerHTML = creditedPois.length ? `
     <p>사진 출처</p>
@@ -1381,7 +1692,7 @@ function formatNumber(value, digits = 0) {
 }
 
 async function loadBuiltInTracks() {
-  const routesWithTracks = routeData.filter(route => route.trackFile);
+  const routesWithTracks = routeData.filter(route => route.trackFile || route.trackFiles);
 
   await Promise.all(routesWithTracks.map(async route => {
     try {
@@ -1390,6 +1701,22 @@ async function loadBuiltInTracks() {
 
       if (embeddedTrack) {
         loadedTrack = embeddedTrack;
+      } else if (route.trackFiles) {
+        const variantEntries = await Promise.all(
+          Object.entries(route.trackFiles).map(async ([variantId, trackFile]) => {
+            const response = await fetch(trackFile);
+            if (!response.ok) throw new Error(`${response.status}`);
+            const text = await response.text();
+            const parsed = parseTrackFile(text, trackFile);
+            return [variantId, parsed.coords];
+          })
+        );
+        loadedTrack = {
+          name: "코스별 GPX",
+          coords: variantEntries[0][1],
+          variantCoords: Object.fromEntries(variantEntries),
+          source: route.trackSource
+        };
       } else {
         const response = await fetch(route.trackFile);
         if (!response.ok) throw new Error(`${response.status}`);
@@ -1453,6 +1780,7 @@ function getEmbeddedTrack(routeId) {
   return {
     name: track.name,
     coords: track.coords,
+    variantCoords: track.variantCoords,
     source: `${track.source} · 내장 데이터`,
     variant: routeData.find(route => route.id === routeId)?.trackVariant || null
   };
@@ -1523,6 +1851,11 @@ poiToggleButton.addEventListener("click", () => {
     expandedPoiRoutes.add(routeId);
   }
   renderPois();
+});
+
+closeFoodPhotoDialog.addEventListener("click", () => foodPhotoDialog.close());
+foodPhotoDialog.addEventListener("click", event => {
+  if (event.target === foodPhotoDialog) foodPhotoDialog.close();
 });
 
 initMap();

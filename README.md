@@ -173,31 +173,40 @@ Alba → Col dei Rossi → Fredarola
 
 ### Day 3 세체다
 
-현재는 좌표 기반 경로다. 산장/POI 이미지와 목록이 연결되어 있다.
-
-주요 POI:
+사용자가 공유한 두 GPX를 쉬운 복귀 코스와 도전 복귀 코스로 연결했다. 두 코스 모두 숙소에서 Ortisei로 이동한 뒤 케이블카로 Seceda 상부역에 올라 같은 길을 걷고, Pieralongia를 둘러본 뒤 Baita Troier에서 갈라진다.
 
 ```text
-Ortisei, Seceda, Baita Sofie, Baita Troier, Malga Pieralongia,
-Baita Mastle, Baita Daniel, Baita Fermeda, Baita Cuca,
-Malga Neidia, Baita Odles, Col Raiser, Seceda Cross
+공통: Ortisei → Seceda 상부역 → Seceda Cross → Baita Troier
+     → Malga Pieralongia → Baita Troier
+쉬운 복귀: 직진 갈림길 → Seceda 상부역
+도전 복귀: Baita Daniel → Baita Mastle → Baita Sofie → Seceda 상부역
+공통: 케이블카로 Ortisei 하산 → 숙소
 ```
 
-아직 실제 GPX는 없다.
+- `day-03-seceda-easy.gpx`: 580개 트랙 포인트, 트레킹 약 5.3km
+- `day-03-seceda-challenge.gpx`: 612개 트랙 포인트, 트레킹 약 5.6km
+- 숙소와 Ortisei 사이의 버스 이동은 일정에 포함하지만 트레킹 지도에는 표시하지 않음
+- 코스 선택 시 POI 순서, 구간 카드, 트랙 선과 트레킹 거리가 함께 변경됨
+
 
 ### Day 4 알페 디 시우시
 
-현재는 좌표 기반 경로다. 산장/호텔 POI 이미지와 목록이 연결되어 있다.
-
-주요 POI:
+사용자가 공유한 두 GPX를 쉬운 코스와 도전 코스로 연결했다. 두 코스 모두 Mont Sëuc에서 Florian까지 걸어 Wild O’Williams 산장을 왕복한 뒤 Saltria 부근에서 갈라진다.
 
 ```text
-Ortisei, Mont Seuc, Malga Contrin, Hotel Icaro,
-Malga Schgaguler, Baita Sanon, Hotel Ritsch,
-Malga Rauch, Saltria, Florian
+숙소 → Ortisei → Mont Sëuc 상부역
+→ Wiedner Egg 갈림길 → Florian → Wild O’Williams 왕복
+쉬운 코스: Saltria에서 11번 버스 → Ritsch 정류소
+          → Sanon 방향 갈림길 → Hotel Sanon → Sporthotel Sonne
+도전 코스: Saltria와 Brunelle 사이 고원길 → Sporthotel Sonne
+공통: Sonne 리프트 → Mont Sëuc 상부역 → Ortisei → 숙소
 ```
 
-아직 실제 GPX는 없다.
+- `day-04-alpe-siusi.gpx`: 쉬운 코스 976개 트랙 포인트, 트레킹 약 8.6km
+- `day-04-alpe-siusi-hard.gpx`: 도전 코스 723개 트랙 포인트, 트레킹 약 8.9km
+- H → S 구간은 11번 버스 이동으로 표시하며 I~R 경유 좌표도 GPX 선에 포함
+- 숙소와 Ortisei 사이의 버스 이동은 일정에 포함하지만 지도에는 표시하지 않음
+- E와 T 갈림길, 주요 승강장과 버스 정류소 사진을 POI에 연결
 
 ### Day 5 친퀘토리
 

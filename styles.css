@@ -8,7 +8,8 @@
   --moss: #6e8b5c;
   --sky: #4b9ecf;
   --trail: #d85149;
-  --lift: #d8a62b;
+  --lift: #4b9ecf;
+  --bus: #7c3aed;
   --car: #57a575;
   --shadow: 0 18px 55px rgba(24, 33, 31, 0.12);
 }
@@ -277,6 +278,10 @@ h3 {
   background: var(--lift);
 }
 
+.map-current-step[data-mode="bus"] > span {
+  background: var(--bus);
+}
+
 .map-current-step[data-mode="car"] > span {
   background: var(--car);
 }
@@ -399,6 +404,10 @@ h3 {
   background: var(--lift);
 }
 
+.map-sheet-step.bus .map-sheet-step-index {
+  background: var(--bus);
+}
+
 .map-sheet-step.car .map-sheet-step-index {
   background: var(--car);
 }
@@ -474,6 +483,10 @@ h3 {
   background: var(--lift);
 }
 
+.route-pin.bus {
+  background: var(--bus);
+}
+
 .route-pin.car {
   background: var(--car);
 }
@@ -516,6 +529,139 @@ h3 {
 .poi-popup-credit a,
 .photo-credits a {
   color: var(--pine);
+}
+
+.poi-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 38px;
+  margin-top: 10px;
+  padding: 0 10px;
+  border: 1px solid rgba(33, 76, 63, 0.2);
+  border-radius: 9px;
+  background: #eef1e2;
+  color: var(--pine);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.poi-menu-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.poi-menu-toggle::before {
+  content: "🍽";
+  margin-right: 6px;
+}
+
+.poi-menu-toggle::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 16px;
+}
+
+.poi-menu-disclosure[open] .poi-menu-toggle::after {
+  content: "−";
+}
+
+.poi-menu-panel {
+  margin-top: 8px;
+}
+
+.poi-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.poi-menu-item {
+  min-width: 0;
+  margin: 0;
+}
+
+.poi-menu-photo-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  cursor: zoom-in;
+}
+
+.poi-menu-photo-button img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.leaflet-popup-content .poi-menu-item figcaption {
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.food-photo-dialog {
+  width: min(92vw, 820px);
+  max-width: none;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+}
+
+.food-photo-dialog::backdrop {
+  background: rgba(12, 16, 15, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.food-photo-dialog figure {
+  margin: 0;
+}
+
+.food-photo-dialog img {
+  display: block;
+  width: 100%;
+  max-height: 82vh;
+  border-radius: 14px 14px 0 0;
+  object-fit: contain;
+}
+
+.food-photo-dialog figcaption {
+  padding: 11px 16px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.food-photo-dialog-close {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(12, 16, 15, 0.72);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .content-grid {
@@ -589,13 +735,10 @@ h3 {
 }
 
 .variant-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 12px 0;
-  padding: 13px;
+  margin: 6px 0 10px;
+  padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 14px;
   background: rgba(255, 252, 245, 0.9);
 }
 
@@ -603,21 +746,17 @@ h3 {
   display: none;
 }
 
-.variant-panel h3 {
-  margin-bottom: 0;
-}
-
 .variant-buttons {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 4px;
 }
 
 .variant-button {
-  min-height: 48px;
-  padding: 0 12px;
+  min-height: 40px;
+  padding: 0 10px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 10px;
   background: rgba(247, 246, 241, 0.82);
   color: var(--muted);
   font-size: 13px;
@@ -832,6 +971,10 @@ h3 {
 
 .step-card.lift .step-index {
   background: var(--lift);
+}
+
+.step-card.bus .step-index {
+  background: var(--bus);
 }
 
 .step-card.car .step-index {
@@ -1119,14 +1262,12 @@ button:focus-visible,
   }
 
   .variant-panel {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 18px;
+    margin: 0 0 12px;
   }
 
   .variant-buttons {
-    min-width: 360px;
+    width: min(100%, 420px);
+    margin-left: auto;
   }
 
   .step-list {

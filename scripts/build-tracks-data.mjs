@@ -15,6 +15,22 @@ const trackConfigs = [
     source: "Outdooractive · 사용자 제작 · Alba → Fredarola → Viel dal Pan 왕복 → Passo Pordoi → Sass Pordoi"
   },
   {
+    key: "seceda",
+    files: {
+      easy: "day-03-seceda-easy.gpx",
+      challenge: "day-03-seceda-challenge.gpx"
+    },
+    source: "Outdooractive · 사용자 공유 GPX · Ortisei → Seceda → Pieralongia 왕복"
+  },
+  {
+    key: "alpeSiusi",
+    files: {
+      easy: "day-04-alpe-siusi.gpx",
+      challenge: "day-04-alpe-siusi-hard.gpx"
+    },
+    source: "Outdooractive · 사용자 공유 GPX · Mont Sëuc → Florian → Saltria → Ritsch → Sporthotel Sonne"
+  },
+  {
     key: "cinqueTorri",
     file: "day-05-scoiattoli-averau.gpx",
     source: "5 Torri · Scoiattoli → Averau"
@@ -34,6 +50,24 @@ function parseGpxCoords(gpx) {
 
 const builtInTracks = {};
 for (const config of trackConfigs) {
+  if (config.files) {
+    const variantEntries = await Promise.all(
+      Object.entries(config.files).map(async ([variantId, file]) => {
+        const gpxPath = path.join(projectRoot, "assets", "tracks", file);
+        const coords = parseGpxCoords(await readFile(gpxPath, "utf8"));
+        if (coords.length < 2) throw new Error(`${file}: 트랙 포인트가 부족합니다.`);
+        return [variantId, coords];
+      })
+    );
+    builtInTracks[config.key] = {
+      name: "코스별 GPX",
+      source: config.source,
+      coords: variantEntries[0][1],
+      variantCoords: Object.fromEntries(variantEntries)
+    };
+    continue;
+  }
+
   const gpxPath = path.join(projectRoot, "assets", "tracks", config.file);
   const coords = parseGpxCoords(await readFile(gpxPath, "utf8"));
   if (coords.length < 2) throw new Error(`${config.file}: 트랙 포인트가 부족합니다.`);

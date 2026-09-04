@@ -34,11 +34,7 @@
           <div id="mobileRouteTabs" class="mobile-route-tabs" aria-label="모바일 일정 선택"></div>
         </div>
 
-        <section id="variantPanel" class="variant-panel" hidden>
-          <div>
-            <p class="eyebrow">Course</p>
-            <h3>팀 코스 선택</h3>
-          </div>
+        <section id="variantPanel" class="variant-panel" aria-label="팀 코스 선택" hidden>
           <div id="variantButtons" class="variant-buttons"></div>
         </section>
 
@@ -117,6 +113,14 @@
         </section>
       </section>
     </main>
+
+    <dialog id="foodPhotoDialog" class="food-photo-dialog" aria-labelledby="foodPhotoDialogCaption">
+      <button id="closeFoodPhotoDialog" class="food-photo-dialog-close" type="button" aria-label="확대 사진 닫기">×</button>
+      <figure>
+        <img id="foodPhotoDialogImage" alt="">
+        <figcaption id="foodPhotoDialogCaption"></figcaption>
+      </figure>
+    </dialog>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="tracks-data.js"></script>

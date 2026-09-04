@@ -70,7 +70,7 @@ assets/tracks/    원본 GPX/KML 파일 보관
 assets/tracks/day-01-rosengarten.gpx
 assets/tracks/day-01-rosengarten.kml
 assets/tracks/day-02-alba-viel-sass-pordoi.gpx
-assets/tracks/day-05-scoiattoli-averau.gpx
+assets/tracks/day-05-cinque-torri-challenge.gpx
 assets/tracks/day-06-tre-cime.gpx
 ```
 

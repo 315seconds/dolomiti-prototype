@@ -32,8 +32,10 @@ const trackConfigs = [
   },
   {
     key: "cinqueTorri",
-    file: "day-05-scoiattoli-averau.gpx",
-    source: "5 Torri · Scoiattoli → Averau"
+    files: {
+      challenge: "day-05-cinque-torri-challenge.gpx"
+    },
+    source: "Outdooractive · 사용자 공유 GPX · Bai de Dones → Scoiattoli → Averau → Nuvolau"
   },
   {
     key: "treCime",

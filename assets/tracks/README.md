@@ -23,5 +23,6 @@ Built-in verified tracks currently included:
 - `day-03-seceda-challenge.gpx` - 공통 구간 후 Baita Daniel, Mastle, Baita Sofie를 지나 상부역에 복귀하는 도전 코스.
 - `day-04-alpe-siusi.gpx` - Mont Sëuc → Florian 도보, Wild O’Williams 곤돌라 왕복, Saltria → Ritsch 11번 버스, Hotel Sanon과 Sporthotel Sonne를 거쳐 상부역으로 복귀하는 통합 트랙.
 - `day-04-alpe-siusi-hard.gpx` - Wild O’Williams 왕복 후 11번 버스 대신 Saltria와 Brunelle 사이 고원길을 걸어 Sporthotel Sonne로 복귀하는 도전 코스.
+- `day-05-cinque-torri-challenge.gpx` - Bai de Dones에서 Scoiattoli로 올라 Averau와 Nuvolau까지 왕복하는 도전 코스.
 - `day-05-scoiattoli-averau.gpx` - 5 Torri, Scoiattoli to Averau segment.
 - `day-06-tre-cime.gpx` - Trecime Trek, full Tre Cime di Lavaredo circuit.

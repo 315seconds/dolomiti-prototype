@@ -107,6 +107,22 @@ const poiPhotos = {
   sonneLift: {
     src: "assets/poi/day5-sporthotel-sonne-lift.png",
     alt: "스포트호텔 존네 옆 리프트"
+  },
+  baiDeDones: {
+    src: "assets/poi/day6-bai-de-dones.png",
+    alt: "바이 데 도네스 산장 옆 케이블카 승차장"
+  },
+  rifugioScoiattoli: {
+    src: "assets/poi/day6-rifugio-scoiattoli.png",
+    alt: "리푸지오 스코이아톨리 다람쥐 산장"
+  },
+  rifugioAverau: {
+    src: "assets/poi/day6-rifugio-averau.png",
+    alt: "리푸지오 아베라우 산장"
+  },
+  rifugioNuvolau: {
+    src: "assets/poi/day6-rifugio-nuvolau.png",
+    alt: "리푸지오 누볼라우 산장"
   }
 };
 
@@ -115,6 +131,12 @@ const recommendedMenus = {
     { name: "슈니첼", photo: "assets/food/day4-troier-schnitzel.jpg" },
     { name: "굴라쉬", photo: "assets/food/day4-troier-goulash.jpg" },
     { name: "알리오 올리오", photo: "assets/food/day4-troier-aglio-olio.jpg" }
+  ],
+  rifugioScoiattoli: [
+    { name: "추천 메뉴 1", photo: "assets/food/day6-scoiattoli-menu-1.jpg" },
+    { name: "추천 메뉴 2", photo: "assets/food/day6-scoiattoli-menu-2.jpg" },
+    { name: "추천 메뉴 3", photo: "assets/food/day6-scoiattoli-menu-3.jpg" },
+    { name: "추천 메뉴 4", photo: "assets/food/day6-scoiattoli-menu-4.jpg" }
   ]
 };
 
@@ -222,8 +244,8 @@ const routeData = [
     },
     mapHiddenPoiIndices: [6, 7],
     variants: [
-      { id: "a", label: "A팀 가벼운 코스", groups: ["common", "a", "join"] },
-      { id: "b", label: "B팀 트레킹 코스", groups: ["common", "b", "join"] }
+      { id: "a", label: "집중 코스", groups: ["common", "a", "join"] },
+      { id: "b", label: "도전 코스", groups: ["common", "b", "join"] }
     ],
     pois: [
       ["Alba", "케이블카 출발", [46.457509, 11.788861], poiPhotos.alba],
@@ -357,8 +379,8 @@ const routeData = [
     trackSource: "Outdooractive · 사용자 공유 GPX · Ortisei → Seceda → Pieralongia 왕복",
     variantTrailKm: { easy: 5.3, challenge: 5.6 },
     variants: [
-      { id: "easy", label: "쉬운 복귀 코스", groups: ["common", "easy", "finish"] },
-      { id: "challenge", label: "도전 복귀 코스", groups: ["common", "challenge", "finish"] }
+      { id: "easy", label: "집중 코스", groups: ["common", "easy", "finish"] },
+      { id: "challenge", label: "도전 코스", groups: ["common", "challenge", "finish"] }
     ],
     variantPoiOrder: {
       easy: [0, 1, 2, 3, 4, 8],
@@ -524,7 +546,7 @@ const routeData = [
     trackSource: "Outdooractive · 사용자 공유 GPX · Mont Sëuc → Florian → Saltria → Ritsch → Sporthotel Sonne",
     variantTrailKm: { easy: 8.6, challenge: 8.9 },
     variants: [
-      { id: "easy", label: "쉬운 코스", groups: ["common", "easy", "finish"] },
+      { id: "easy", label: "집중 코스", groups: ["common", "easy", "finish"] },
       { id: "challenge", label: "도전 코스", groups: ["common", "challenge", "finish"] }
     ],
     variantPoiOrder: {
@@ -532,18 +554,18 @@ const routeData = [
       challenge: [0, 1, 2, 3, 4, 11, 9, 10]
     },
     pois: [
-      ["Ortisei 케이블카 하부역", "A · 버스 주차장 앞 승차 지점", [46.573101, 11.671181], poiPhotos.alpeCableLower],
-      ["Mont Sëuc 상부역", "B/K/X · 케이블카 하차 및 최종 복귀", [46.558049, 11.664709], poiPhotos.montSeucUpper],
-      ["Wiedner Egg 갈림길", "E · Florian 방향으로 진행", [46.537848, 11.653879], poiPhotos.wiednerEggJunction],
-      ["Florian", "F · 곤돌라 하부역", [46.53132, 11.671119], poiPhotos.florian],
-      ["Wild O’Williams", "G · 전망 감상 및 추천 음식", [46.515406, 11.684711], poiPhotos.wildOWilliams],
-      ["Saltria 버스 정류장", "H · 현장 발권 후 11번 버스 탑승", [46.531719, 11.669259], poiPhotos.saltriaBus],
-      ["Ritsch 정류소", "S · 11번 버스 하차", [46.540491, 11.645572], poiPhotos.ritschStop],
-      ["Sanon 방향 갈림길", "T · 오른쪽 길로 진입", [46.542899, 11.646677], poiPhotos.sanonJunction],
-      ["Hotel Sanon", "U · 호텔을 지나 계속 이동", [46.547865, 11.655507]],
-      ["Sporthotel Sonne", "I/V · 호텔 옆 리프트 탑승", [46.553718, 11.663376], poiPhotos.sonneLift],
-      ["Sonne 리프트 상부", "J/W · 하차 후 Mont Sëuc 방향 도보", [46.557738, 11.663636]],
-      ["Saltria 도보 분기", "H · Brunelle 호텔 사이길로 진행", [46.531893, 11.66898]]
+      ["Ortisei 케이블카 하부역", "버스 주차장 앞 승차 지점", [46.573101, 11.671181], poiPhotos.alpeCableLower],
+      ["Mont Sëuc 상부역", "케이블카 하차 및 최종 복귀", [46.558049, 11.664709], poiPhotos.montSeucUpper],
+      ["Wiedner Egg 갈림길", "Florian 방향으로 진행", [46.537848, 11.653879], poiPhotos.wiednerEggJunction],
+      ["Florian", "곤돌라 하부역", [46.53132, 11.671119], poiPhotos.florian],
+      ["Wild O’Williams", "전망 감상 및 추천 음식", [46.515406, 11.684711], poiPhotos.wildOWilliams],
+      ["Saltria 버스 정류장", "현장 발권 후 11번 버스 탑승", [46.531719, 11.669259], poiPhotos.saltriaBus],
+      ["Ritsch 정류소", "11번 버스 하차", [46.540491, 11.645572], poiPhotos.ritschStop],
+      ["Sanon 방향 갈림길", "오른쪽 길로 진입", [46.542899, 11.646677], poiPhotos.sanonJunction],
+      ["Hotel Sanon", "호텔을 지나 계속 이동", [46.547865, 11.655507]],
+      ["Sporthotel Sonne", "호텔 옆 리프트 탑승", [46.553718, 11.663376], poiPhotos.sonneLift],
+      ["Sonne 리프트 상부", "하차 후 Mont Sëuc 방향 도보", [46.557738, 11.663636]],
+      ["Saltria 도보 분기", "Brunelle 호텔 사이길로 진행", [46.531893, 11.66898]]
     ],
     steps: [
       {
@@ -745,103 +767,124 @@ const routeData = [
     day: "6일차",
     title: "친퀘토리",
     backgroundImage: "assets/05-cinque-torri-map.jpg",
-    summary: "Passo Gardena, Valparola, Falzarego를 차량으로 지나 Bai de Dones에서 리프트를 타고 Scoiattoli, Cinque Torri, Averau, Nuvolau를 연결합니다.",
-    center: [46.5065, 12.0437],
-    zoom: 12,
-    weather: { name: "Rifugio Scoiattoli", coords: [46.508, 12.0489] },
-    trackFile: "assets/tracks/day-05-scoiattoli-averau.gpx",
-    trackSource: "5 Torri · Scoiattoli → Averau",
+    summary: "숙소에서 Bai de Dones로 이동해 케이블카로 Rifugio Scoiattoli에 오른 뒤, 도전 코스는 Rifugio Averau와 Rifugio Nuvolau까지 왕복합니다. 하산 후 Cortina d’Ampezzo에서 시간을 보내고 Lago di Braies를 짧게 산책한 뒤 숙소로 복귀합니다.",
+    center: [46.5055, 12.0435],
+    zoom: 14,
+    weather: { name: "Rifugio Nuvolau", coords: [46.495271, 12.045541] },
+    trackFiles: {
+      challenge: "assets/tracks/day-05-cinque-torri-challenge.gpx"
+    },
+    trackSource: "Outdooractive · 사용자 공유 GPX · Bai de Dones → Scoiattoli → Averau → Nuvolau",
+    variantTrailKm: { challenge: 4.1 },
+    variants: [
+      { id: "challenge", label: "도전 코스", groups: ["common", "challenge", "finish"] }
+    ],
     pois: [
-      ["Passo Gardena", "차량 경유", [46.549, 11.808]],
-      ["Passo Valparola", "차량 경유", [46.5328, 11.9902]],
-      ["Passo Falzarego", "차량 경유", [46.5183, 12.0094]],
-      ["Cianzope", "차량 접근 중간 지점", [46.5219, 12.0291]],
-      ["Bai de Dones", "리프트 하부", [46.5182, 12.0382]],
-      ["Rifugio Scoiattoli", "리프트 상부", [46.508, 12.0489]],
-      ["Cinque Torri", "암봉 루프", [46.5071, 12.0572]],
-      ["Rifugio 5 Torri", "산장", [46.5036, 12.0542]],
-      ["Rifugio Averau", "Forcella Nuvolau", [46.5008, 12.0478]],
-      ["Rifugio Nuvolau", "전망 산장", [46.4934, 12.0506]],
-      ["Cortina d'Ampezzo", "이후 방문", [46.5405, 12.1357]],
-      ["Lago di Braies", "호수 산책", [46.6943, 12.0859]]
+      ["Baita Bai de Dones", "산장 옆 케이블카 승차장", [46.518674, 12.038592], poiPhotos.baiDeDones],
+      ["Rifugio Scoiattoli", "다람쥐 산장 · 케이블카 하차", [46.507974, 12.046964], poiPhotos.rifugioScoiattoli, recommendedMenus.rifugioScoiattoli],
+      ["Rifugio Averau", "도전 코스 경유 산장", [46.49962, 12.040936], poiPhotos.rifugioAverau],
+      ["Rifugio Nuvolau", "도전 코스 반환점", [46.495271, 12.045541], poiPhotos.rifugioNuvolau]
     ],
     steps: [
       {
-        title: "Passo Gardena → Passo Valparola",
-        mode: "car",
-        meta: "차량 이동 · 패스 경유",
-        note: "호텔에서 출발해 가르데나 패스에서 발파롤라 패스 방향으로 넘어갑니다.",
-        coords: [[46.549, 11.808], [46.5328, 11.9902]]
+        range: "출발 · 버스",
+        group: "common",
+        title: "숙소 → Baita Bai de Dones",
+        mode: "bus",
+        meta: "버스 이동 · 일정 시작",
+        note: "숙소에서 버스를 타고 A 지점인 Baita Bai de Dones 산장 옆 케이블카 승차장으로 이동합니다.",
+        mapHidden: true,
+        coords: [[46.4309, 11.6934], [46.518674, 12.038592]]
       },
       {
-        title: "Passo Valparola → Passo Falzarego",
-        mode: "car",
-        meta: "차량 이동 · 패스 경유",
-        note: "친퀘토리 접근 전 Falzarego 패스로 이어지는 차량 이동입니다.",
-        coords: [[46.5328, 11.9902], [46.5183, 12.0094]]
+        range: "1→2",
+        group: "common",
+        title: "Baita Bai de Dones → Rifugio Scoiattoli",
+        mode: "cable",
+        meta: "케이블카 · 산장 접근",
+        note: "A 지점에서 케이블카를 타고 B 지점인 Rifugio Scoiattoli 다람쥐 산장에서 내립니다.",
+        trackRange: [0, 1],
+        coords: [[46.518674, 12.038592], [46.507974, 12.046964]]
       },
       {
-        title: "Passo Falzarego → Bai de Dones",
-        mode: "car",
-        meta: "차량 이동 · 리프트 하부",
-        note: "Cianzope 부근을 지나 5 Torri 리프트 하부로 접근합니다.",
-        coords: [[46.5183, 12.0094], [46.5219, 12.0291], [46.5182, 12.0382]]
-      },
-      {
-        title: "Bai de Dones → Scoiattoli",
-        mode: "lift",
-        meta: "리프트 · 친퀘토리 접근",
-        note: "5 Torri 리프트를 타고 Scoiattoli 산장까지 올라갑니다.",
-        coords: [[46.5182, 12.0382], [46.508, 12.0489]]
-      },
-      {
-        title: "Scoiattoli → Cinque Torri",
+        range: "2→3",
+        group: "challenge",
+        title: "Rifugio Scoiattoli → Rifugio Averau",
         mode: "trail",
-        meta: "트레킹 · 암봉 접근",
-        note: "Scoiattoli 산장에서 친퀘토리 암봉 쪽으로 이동합니다.",
-        coords: [[46.508, 12.0489], [46.5112, 12.0551], [46.5071, 12.0572]]
+        meta: "도전 코스 · 산장 이동",
+        note: "B 지점인 Rifugio Scoiattoli에서 출발해 C 지점인 Rifugio Averau까지 올라갑니다.",
+        trackRange: [1, 73],
+        coords: [[46.507974, 12.046964], [46.49962, 12.040936]]
       },
       {
-        title: "Cinque Torri → Rifugio 5 Torri",
+        range: "3→4",
+        group: "challenge",
+        title: "Rifugio Averau → Rifugio Nuvolau",
         mode: "trail",
-        meta: "트레킹 · 루프 하단",
-        note: "암봉 주변을 돌아 5 Torri 산장 방향으로 내려갑니다.",
-        coords: [[46.5071, 12.0572], [46.5064, 12.0589], [46.5036, 12.0542]]
+        meta: "도전 코스 · 전망 산장",
+        note: "C 지점에서 D 지점인 Rifugio Nuvolau까지 올라 전망을 둘러봅니다.",
+        trackRange: [73, 109],
+        coords: [[46.49962, 12.040936], [46.495271, 12.045541]]
       },
       {
-        title: "Rifugio 5 Torri → Scoiattoli",
+        range: "4→3",
+        group: "challenge",
+        title: "Rifugio Nuvolau → Rifugio Averau",
         mode: "trail",
-        meta: "트레킹 · 루프 완료",
-        note: "짧은 친퀘토리 루프를 마치고 Scoiattoli 산장으로 복귀합니다.",
-        coords: [[46.5036, 12.0542], [46.5047, 12.0529], [46.508, 12.0489]]
+        meta: "도전 코스 · 같은 길 복귀",
+        note: "Nuvolau에서 왔던 길을 따라 Rifugio Averau까지 내려옵니다.",
+        trackRange: [109, 73],
+        coords: [[46.495271, 12.045541], [46.49962, 12.040936]]
       },
       {
-        title: "Scoiattoli → Averau",
+        range: "3→2",
+        group: "challenge",
+        title: "Rifugio Averau → Rifugio Scoiattoli",
         mode: "trail",
-        meta: "트레킹 · 산장 연결",
-        note: "Scoiattoli에서 Averau 산장으로 오르는 쉬운 연결 구간입니다.",
-        coords: [[46.508, 12.0489], [46.5042, 12.0485], [46.5008, 12.0478]]
+        meta: "도전 코스 · 케이블카 복귀",
+        note: "Averau에서 같은 길을 따라 B 지점인 Rifugio Scoiattoli까지 돌아옵니다.",
+        trackRange: [73, 1],
+        coords: [[46.49962, 12.040936], [46.507974, 12.046964]]
       },
       {
-        title: "Averau → Nuvolau",
-        mode: "trail",
-        meta: "트레킹 · 전망대",
-        note: "Nuvolau 산장까지 올라가는 당일 조망 확장 구간입니다.",
-        coords: [[46.5008, 12.0478], [46.4973, 12.0491], [46.4934, 12.0506]]
+        range: "2→1",
+        group: "finish",
+        title: "Rifugio Scoiattoli → Baita Bai de Dones",
+        mode: "cable",
+        meta: "케이블카 · 하산",
+        note: "B 지점에서 케이블카를 타고 A 지점인 Bai de Dones 승차장으로 내려옵니다.",
+        trackRange: [1, 0],
+        coords: [[46.507974, 12.046964], [46.518674, 12.038592]]
       },
       {
-        title: "Nuvolau → Scoiattoli",
-        mode: "trail",
-        meta: "트레킹 · 리프트 복귀",
-        note: "전망 산장에서 Averau를 거쳐 리프트 상부로 돌아오는 복귀 구간입니다.",
-        coords: [[46.4934, 12.0506], [46.5008, 12.0478], [46.508, 12.0489]]
+        range: "이후 · 버스",
+        group: "finish",
+        title: "Baita Bai de Dones → Cortina d’Ampezzo",
+        mode: "bus",
+        meta: "버스 이동 · 시내 자유시간",
+        note: "Bai de Dones로 내려온 뒤 버스를 타고 Cortina d’Ampezzo로 이동해 자유롭게 시간을 보냅니다.",
+        mapHidden: true,
+        coords: [[46.518674, 12.038592], [46.5405, 12.1357]]
       },
       {
-        title: "Bai de Dones → Cortina → Braies",
-        mode: "car",
-        meta: "차량 이동 · 이후 일정",
-        note: "트레킹 후 코르티나 담페초를 지나 브라이에스 호수 산책으로 이어집니다.",
-        coords: [[46.5182, 12.0382], [46.5405, 12.1357], [46.6943, 12.0859]]
+        range: "이후 · 버스",
+        group: "finish",
+        title: "Cortina d’Ampezzo → Lago di Braies",
+        mode: "bus",
+        meta: "버스 이동 · 호수 산책",
+        note: "코르티나 담페초 방문을 마친 뒤 브라이에스 호수로 이동해 주변을 짧게 산책합니다.",
+        mapHidden: true,
+        coords: [[46.5405, 12.1357], [46.6943, 12.0859]]
+      },
+      {
+        range: "마무리 · 버스",
+        group: "finish",
+        title: "Lago di Braies → 숙소",
+        mode: "bus",
+        meta: "버스 이동 · 일정 종료",
+        note: "브라이에스 호수 산책을 마친 뒤 버스를 타고 숙소로 복귀합니다.",
+        mapHidden: true,
+        coords: [[46.6943, 12.0859], [46.4309, 11.6934]]
       }
     ]
   },
@@ -983,6 +1026,7 @@ const weatherPlace = document.querySelector("#weatherPlace");
 const weatherBody = document.querySelector("#weatherBody");
 const variantPanel = document.querySelector("#variantPanel");
 const variantButtons = document.querySelector("#variantButtons");
+const mapLegend = document.querySelector("#mapLegend");
 
 function initMap() {
   map = L.map("routeMap", {
@@ -1174,6 +1218,7 @@ function renderMap({ focusActiveStep = false } = {}) {
   const route = routeData[activeRouteIndex];
   const importedTrack = getVisibleImportedTrack(route);
   const visibleSteps = getVisibleSteps(route);
+  renderMapLegend(visibleSteps);
   const boundsPoints = [];
   const trackStepSegments = buildTrackStepSegments(importedTrack, visibleSteps);
   let activeLine = null;
@@ -1289,6 +1334,23 @@ function renderMap({ focusActiveStep = false } = {}) {
   window.setTimeout(() => map.invalidateSize(), 50);
 }
 
+function renderMapLegend(visibleSteps) {
+  const visibleModes = new Set(
+    visibleSteps.filter(({ step }) => !step.mapHidden).map(({ step }) => step.mode)
+  );
+  const items = [
+    visibleModes.has("trail") && [colors.trail, "트레킹"],
+    (visibleModes.has("cable") || visibleModes.has("lift")) && [colors.cable, "케이블카·리프트"],
+    visibleModes.has("bus") && [colors.bus, "버스"],
+    visibleModes.has("car") && [colors.car, "차량"]
+  ].filter(Boolean);
+
+  mapLegend.hidden = items.length === 0;
+  mapLegend.innerHTML = items.map(([color, label]) => `
+    <span class="map-legend-item"><i class="map-legend-dot" style="background:${color}"></i>${label}</span>
+  `).join("");
+}
+
 function clearMap() {
   drawnLayers.forEach(layer => layer.remove());
   poiMarkers.forEach(marker => marker.remove());
@@ -1300,7 +1362,7 @@ function clearMap() {
 
 function pointModeForIndex(route, index) {
   const poiCoord = route.pois[index][2];
-  const step = route.steps.find(item => item.coords.some(coord => sameCoord(coord, poiCoord)));
+  const step = route.steps.find(item => !item.mapHidden && item.coords.some(coord => sameCoord(coord, poiCoord)));
   return step ? step.mode : "trail";
 }
 
@@ -1322,6 +1384,15 @@ function buildTrackStepSegments(importedTrack, visibleSteps) {
   let searchIndex = 0;
   visibleSteps.forEach(({ step }, index) => {
     if (step.mapHidden || step.approximateConnector) return;
+    if (step.trackRange) {
+      const [startIndex, endIndex] = step.trackRange;
+      const segment = importedTrack.coords.slice(
+        Math.min(startIndex, endIndex),
+        Math.max(startIndex, endIndex) + 1
+      );
+      segments.set(index, startIndex <= endIndex ? segment : segment.reverse());
+      return;
+    }
     const startMatch = findClosestTrackIndex(importedTrack.coords, step.coords[0], searchIndex);
     const endMatch = findClosestTrackIndex(importedTrack.coords, step.coords.at(-1), startMatch.index);
     if (startMatch.distance > 0.6 || endMatch.distance > 0.6 || endMatch.index <= startMatch.index) return;

@@ -1266,7 +1266,9 @@ function renderMap({ focusActiveStep = false } = {}) {
       <small class="poi-popup-credit">사진: <a href="${photo.source}" target="_blank" rel="noopener">${photo.author}</a> · <a href="${photo.licenseUrl}" target="_blank" rel="noopener">${photo.license}</a></small>
     ` : "";
     const popupPhoto = photo ? `
-      <img class="poi-popup-image" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+      <button class="poi-popup-image-button" type="button" aria-label="${name} 사진 크게 보기">
+        <img class="poi-popup-image" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+      </button>
       ${popupCredit}
     ` : "";
     const menuContent = recommendedMenu?.length ? `
@@ -1294,22 +1296,16 @@ function renderMap({ focusActiveStep = false } = {}) {
         iconAnchor: [22, 22]
       })
     }).bindPopup(`${popupPhoto}<strong>${name}</strong><span>${description}</span>${menuContent}`).addTo(map);
-    if (recommendedMenu?.length) {
-      marker.on("popupopen", event => {
-        event.popup.getElement()?.querySelectorAll(".poi-menu-photo-button").forEach(button => {
-          if (button.dataset.lightboxBound) return;
-          button.dataset.lightboxBound = "true";
-          button.addEventListener("click", clickEvent => {
-            clickEvent.stopPropagation();
-            const image = button.querySelector("img");
-            foodPhotoDialogImage.src = image.src;
-            foodPhotoDialogImage.alt = image.alt;
-            foodPhotoDialogCaption.textContent = image.alt;
-            foodPhotoDialog.showModal();
-          });
+    marker.on("popupopen", event => {
+      event.popup.getElement()?.querySelectorAll(".poi-popup-image-button, .poi-menu-photo-button").forEach(button => {
+        if (button.dataset.lightboxBound) return;
+        button.dataset.lightboxBound = "true";
+        button.addEventListener("click", clickEvent => {
+          clickEvent.stopPropagation();
+          openPhotoDialog(button.querySelector("img"));
         });
       });
-    }
+    });
     poiMarkers.push(marker);
     boundsPoints.push(coord);
   });
@@ -1485,7 +1481,9 @@ function renderPois() {
     item.setAttribute("role", "button");
     item.hidden = !isExpanded && displayIndex >= 6;
     item.innerHTML = photo ? `
-      <img class="poi-item-photo" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+      <button class="poi-item-photo-button" type="button" aria-label="${name} 사진 크게 보기">
+        <img class="poi-item-photo" src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async">
+      </button>
       <div class="poi-item-copy"><strong>${displayIndex + 1}. ${name}</strong><span>${description}</span></div>
     ` : `<strong>${displayIndex + 1}. ${name}</strong><span>${description}</span>`;
     const focusPoi = () => {
@@ -1495,6 +1493,12 @@ function renderPois() {
       map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15), { animate: true });
       marker.openPopup();
     };
+    const photoButton = item.querySelector(".poi-item-photo-button");
+    photoButton?.addEventListener("click", event => {
+      event.stopPropagation();
+      openPhotoDialog(photoButton.querySelector("img"));
+    });
+    photoButton?.addEventListener("keydown", event => event.stopPropagation());
     item.addEventListener("click", focusPoi);
     item.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") {
@@ -1928,6 +1932,13 @@ closeFoodPhotoDialog.addEventListener("click", () => foodPhotoDialog.close());
 foodPhotoDialog.addEventListener("click", event => {
   if (event.target === foodPhotoDialog) foodPhotoDialog.close();
 });
+
+function openPhotoDialog(image) {
+  foodPhotoDialogImage.src = image.src;
+  foodPhotoDialogImage.alt = image.alt;
+  foodPhotoDialogCaption.textContent = image.alt;
+  foodPhotoDialog.showModal();
+}
 
 initMap();
 buildTabs(routeTabs);

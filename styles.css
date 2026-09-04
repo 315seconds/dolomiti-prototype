@@ -226,6 +226,12 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+@media (max-width: 1023px) {
+  .variant-panel:not([hidden]) + .map-stage .map-frame {
+    height: clamp(520px, calc(72svh - env(safe-area-inset-bottom)), 590px);
+  }
+}
+
 .map-step-sheet {
   position: absolute;
   z-index: 800;

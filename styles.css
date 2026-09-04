@@ -178,7 +178,7 @@ h3 {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(24, 33, 31, 0.1);
-  height: clamp(430px, 66svh, 580px);
+  height: clamp(540px, 78svh, 640px);
   border-right: 0;
   border-left: 0;
   border-radius: 0;

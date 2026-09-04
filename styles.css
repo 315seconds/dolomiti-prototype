@@ -561,16 +561,15 @@ h3 {
 }
 
 .install-app-dialog-icon {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
+  display: block;
+  width: 68px;
+  height: 68px;
   margin-bottom: 20px;
-  border-radius: 14px;
-  background: var(--pine);
-  color: #fff;
-  font-size: 22px;
-  font-weight: 900;
+  border: 1px solid rgba(24, 33, 31, 0.1);
+  border-radius: 16px;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 5px 16px rgba(24, 33, 31, 0.08);
 }
 
 .install-app-dialog h2 {

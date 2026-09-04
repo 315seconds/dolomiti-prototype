@@ -17,111 +17,111 @@ const labels = {
 
 const poiPhotos = {
   novaLevante: {
-    src: "assets/poi/day2-nova-levante.png",
+    src: "assets/poi/day2-nova-levante.jpg",
     alt: "노바레반테 마을과 케이블카 출발 지점"
   },
   malgaFrommer: {
-    src: "assets/poi/day2-malga-frommer.png",
+    src: "assets/poi/day2-malga-frommer.jpg",
     alt: "말가 프롬머 케이블카 환승 지점"
   },
   koelnerHuette: {
-    src: "assets/poi/day2-koelner-huette.png",
+    src: "assets/poi/day2-koelner-huette.jpg",
     alt: "로젠가르텐 암벽 아래의 쾰너 산장"
   },
   paolinaHuette: {
-    src: "assets/poi/day2-paolina.png",
+    src: "assets/poi/day2-paolina.jpg",
     alt: "파올리나 산장과 리프트 승강장"
   },
   alba: {
-    src: "assets/poi/day3-alba.png",
+    src: "assets/poi/day3-alba.jpg",
     alt: "알바 케이블카 출발 지점"
   },
   colDeiRossi: {
-    src: "assets/poi/day3-col-dei-rossi.png",
+    src: "assets/poi/day3-col-dei-rossi.jpg",
     alt: "콜 데이 로시 케이블카 상부 지점"
   },
   fredarola: {
-    src: "assets/poi/day3-rifugio-fredarola.png",
+    src: "assets/poi/day3-rifugio-fredarola.jpg",
     alt: "리푸지오 프레다롤라 산장"
   },
   vielDalPan: {
-    src: "assets/poi/day3-rifugio-viel-dal-pan.png",
+    src: "assets/poi/day3-rifugio-viel-dal-pan.jpg",
     alt: "마르몰라다를 마주 보는 비엘 달 판 산장"
   },
   passoPordoi: {
-    src: "assets/poi/day3-passo-pordoi.png",
+    src: "assets/poi/day3-passo-pordoi.jpg",
     alt: "포르도이 고개의 사쓰 포르도이 케이블카 하부역"
   },
   ortisei: {
-    src: "assets/poi/day4-ortisei.png",
+    src: "assets/poi/day4-ortisei.jpg",
     alt: "오르티세이 마을과 케이블카 출발 지점"
   },
   seceda: {
-    src: "assets/poi/day4-seceda.png",
+    src: "assets/poi/day4-seceda.jpg",
     alt: "세체다 케이블카 상부 지역"
   },
   secedaCross: {
-    src: "assets/poi/day4-seceda-cross.png",
+    src: "assets/poi/day4-seceda-cross.jpg",
     alt: "세체다 크로스 능선 전망 포인트"
   },
   baitaTroier: {
-    src: "assets/poi/day4-baita-troier.png",
+    src: "assets/poi/day4-baita-troier.jpg",
     alt: "바이타 트로이어 산장"
   },
   malgaPieralongia: {
-    src: "assets/poi/day4-malga-pieralongia.png",
+    src: "assets/poi/day4-malga-pieralongia.jpg",
     alt: "말가 피에라론지아 산장"
   },
   alpeCableLower: {
-    src: "assets/poi/day5-a-cable-lower.png",
+    src: "assets/poi/day5-a-cable-lower.jpg",
     alt: "오르티세이 알페 디 시우시 케이블카 승차 지점"
   },
   montSeucUpper: {
-    src: "assets/poi/day5-b-cable-upper.png",
+    src: "assets/poi/day5-b-cable-upper.jpg",
     alt: "몬트 세우크 케이블카 상부역"
   },
   wiednerEggJunction: {
-    src: "assets/poi/day5-e-junction.png",
+    src: "assets/poi/day5-e-junction.jpg",
     alt: "비트너 에크 버스 표지판이 있는 갈림길"
   },
   florian: {
-    src: "assets/poi/day5-f-florian.png",
+    src: "assets/poi/day5-f-florian.jpg",
     alt: "플로리안 곤돌라 하부역"
   },
   wildOWilliams: {
-    src: "assets/poi/day5-wild-o-williams.png",
+    src: "assets/poi/day5-wild-o-williams.jpg",
     alt: "와일드 오 윌리엄스 산장"
   },
   saltriaBus: {
-    src: "assets/poi/day5-h-bus-11.png",
+    src: "assets/poi/day5-h-bus-11.jpg",
     alt: "살트리아에서 탑승하는 11번 버스"
   },
   ritschStop: {
-    src: "assets/poi/day5-s-ritsch-stop.png",
+    src: "assets/poi/day5-s-ritsch-stop.jpg",
     alt: "리치 버스 정류소"
   },
   sanonJunction: {
-    src: "assets/poi/day5-t-junction.png",
+    src: "assets/poi/day5-t-junction.jpg",
     alt: "호텔 사논 방향으로 우회전하는 갈림길"
   },
   sonneLift: {
-    src: "assets/poi/day5-sporthotel-sonne-lift.png",
+    src: "assets/poi/day5-sporthotel-sonne-lift.jpg",
     alt: "스포트호텔 존네 옆 리프트"
   },
   baiDeDones: {
-    src: "assets/poi/day6-bai-de-dones.png",
+    src: "assets/poi/day6-bai-de-dones.jpg",
     alt: "바이 데 도네스 산장 옆 케이블카 승차장"
   },
   rifugioScoiattoli: {
-    src: "assets/poi/day6-rifugio-scoiattoli.png",
+    src: "assets/poi/day6-rifugio-scoiattoli.jpg",
     alt: "리푸지오 스코이아톨리 다람쥐 산장"
   },
   rifugioAverau: {
-    src: "assets/poi/day6-rifugio-averau.png",
+    src: "assets/poi/day6-rifugio-averau.jpg",
     alt: "리푸지오 아베라우 산장"
   },
   rifugioNuvolau: {
-    src: "assets/poi/day6-rifugio-nuvolau.png",
+    src: "assets/poi/day6-rifugio-nuvolau.jpg",
     alt: "리푸지오 누볼라우 산장"
   }
 };
@@ -1027,6 +1027,14 @@ const weatherBody = document.querySelector("#weatherBody");
 const variantPanel = document.querySelector("#variantPanel");
 const variantButtons = document.querySelector("#variantButtons");
 const mapLegend = document.querySelector("#mapLegend");
+const offlineMapButton = document.querySelector("#offlineMapButton");
+const installAppButton = document.querySelector("#installAppButton");
+const installAppDialog = document.querySelector("#installAppDialog");
+const installAppInstructions = document.querySelector("#installAppInstructions");
+const closeInstallAppDialog = document.querySelector("#closeInstallAppDialog");
+const confirmInstallAppDialog = document.querySelector("#confirmInstallAppDialog");
+let deferredInstallPrompt = null;
+let offlineMapDownloadRouteId = null;
 
 function initMap() {
   map = L.map("routeMap", {
@@ -1188,6 +1196,7 @@ function renderRoute() {
   renderPois();
   loadWeather(route);
   updateCurrentStep();
+  renderOfflineMapButton();
 }
 
 function renderSummary(route) {
@@ -1910,6 +1919,169 @@ function isValidCoord(coord) {
   return Number.isFinite(coord[0]) && Number.isFinite(coord[1]);
 }
 
+function isStandaloneApp() {
+  return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+}
+
+function setupInstallApp() {
+  if (isStandaloneApp()) {
+    installAppButton.hidden = true;
+    return;
+  }
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  installAppInstructions.innerHTML = isIOS
+    ? "Safari 하단의 <strong>공유</strong> 버튼을 누른 뒤 <strong>홈 화면에 추가</strong>를 선택하세요. 설치 후에는 일반 앱처럼 전체 화면으로 열립니다."
+    : "설치 창이 나타나지 않으면 브라우저 메뉴에서 <strong>앱 설치</strong> 또는 <strong>홈 화면에 추가</strong>를 선택하세요.";
+
+  window.addEventListener("beforeinstallprompt", event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    installAppButton.classList.add("install-ready");
+  });
+
+  window.addEventListener("appinstalled", () => {
+    deferredInstallPrompt = null;
+    installAppButton.hidden = true;
+  });
+
+  installAppButton.addEventListener("click", async () => {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      const choice = await deferredInstallPrompt.userChoice;
+      if (choice.outcome === "accepted") installAppButton.hidden = true;
+      deferredInstallPrompt = null;
+      return;
+    }
+    installAppDialog.showModal();
+  });
+
+  closeInstallAppDialog.addEventListener("click", () => installAppDialog.close());
+  confirmInstallAppDialog.addEventListener("click", () => installAppDialog.close());
+  installAppDialog.addEventListener("click", event => {
+    if (event.target === installAppDialog) installAppDialog.close();
+  });
+}
+
+function getRouteOfflineCoords(route) {
+  const stepCoords = route.steps.filter(step => !step.mapHidden).flatMap(step => step.coords || []);
+  const hiddenPoiIndices = new Set(route.mapHiddenPoiIndices || []);
+  const poiCoords = route.pois.filter((_, index) => !hiddenPoiIndices.has(index)).map(poi => poi[2]);
+  const track = importedTracks[route.id];
+  const trackCoords = track?.variantCoords
+    ? Object.values(track.variantCoords).flat()
+    : track?.coords || [];
+  return [...stepCoords, ...poiCoords, ...trackCoords].filter(isValidCoord);
+}
+
+function longitudeToTileX(longitude, zoom) {
+  return Math.floor(((longitude + 180) / 360) * (2 ** zoom));
+}
+
+function latitudeToTileY(latitude, zoom) {
+  const safeLatitude = Math.max(-85.0511, Math.min(85.0511, latitude));
+  const radians = safeLatitude * Math.PI / 180;
+  return Math.floor((1 - Math.asinh(Math.tan(radians)) / Math.PI) / 2 * (2 ** zoom));
+}
+
+function getOfflineTileUrls(route, minZoom = 11, maxZoom = 15) {
+  const coords = getRouteOfflineCoords(route);
+  const latitudes = coords.map(coord => coord[0]);
+  const longitudes = coords.map(coord => coord[1]);
+  const south = Math.min(...latitudes);
+  const north = Math.max(...latitudes);
+  const west = Math.min(...longitudes);
+  const east = Math.max(...longitudes);
+  const urls = [];
+
+  for (let zoom = minZoom; zoom <= maxZoom; zoom += 1) {
+    const limit = (2 ** zoom) - 1;
+    const minX = Math.max(0, longitudeToTileX(west, zoom) - 1);
+    const maxX = Math.min(limit, longitudeToTileX(east, zoom) + 1);
+    const minY = Math.max(0, latitudeToTileY(north, zoom) - 1);
+    const maxY = Math.min(limit, latitudeToTileY(south, zoom) + 1);
+    for (let x = minX; x <= maxX; x += 1) {
+      for (let y = minY; y <= maxY; y += 1) {
+        const subdomain = ["a", "b", "c"][(x + y) % 3];
+        urls.push(`https://${subdomain}.tile.opentopomap.org/${zoom}/${x}/${y}.png`);
+      }
+    }
+  }
+  return [...new Set(urls)];
+}
+
+function renderOfflineMapButton() {
+  const route = routeData[activeRouteIndex];
+  const label = offlineMapButton.querySelector("span");
+  const saved = localStorage.getItem(`offline-map-${route.id}`);
+  offlineMapButton.classList.toggle("saved", Boolean(saved));
+  offlineMapButton.disabled = Boolean(offlineMapDownloadRouteId);
+  label.textContent = saved ? "오프라인 저장됨" : "오프라인 저장";
+}
+
+async function saveCurrentRouteMap() {
+  const route = routeData[activeRouteIndex];
+  if (!("serviceWorker" in navigator) || !window.isSecureContext) {
+    offlineMapButton.querySelector("span").textContent = "HTTPS에서 사용 가능";
+    return;
+  }
+
+  const urls = getOfflineTileUrls(route);
+  offlineMapDownloadRouteId = route.id;
+  offlineMapButton.disabled = true;
+  offlineMapButton.classList.add("downloading");
+  offlineMapButton.querySelector("span").textContent = `지도 저장 0/${urls.length}`;
+
+  try {
+    const registration = await navigator.serviceWorker.ready;
+    registration.active.postMessage({ type: "CACHE_MAP_TILES", routeId: route.id, urls });
+  } catch (error) {
+    console.warn("Offline map download failed:", error);
+    offlineMapDownloadRouteId = null;
+    offlineMapButton.classList.remove("downloading");
+    offlineMapButton.querySelector("span").textContent = "저장 실패 · 다시 시도";
+    offlineMapButton.disabled = false;
+  }
+}
+
+function setupOfflineMap() {
+  offlineMapButton.addEventListener("click", saveCurrentRouteMap);
+  if (!("serviceWorker" in navigator)) return;
+
+  navigator.serviceWorker.addEventListener("message", event => {
+    const message = event.data;
+    if (message?.routeId !== offlineMapDownloadRouteId) return;
+    if (message.type === "MAP_CACHE_PROGRESS" && routeData[activeRouteIndex].id === message.routeId) {
+      offlineMapButton.querySelector("span").textContent = `지도 저장 ${message.completed}/${message.total}`;
+    }
+    if (message.type === "MAP_CACHE_COMPLETE") {
+      const route = routeData.find(item => item.id === message.routeId);
+      if (message.failed === 0) {
+        localStorage.setItem(`offline-map-${message.routeId}`, JSON.stringify({
+          savedAt: new Date().toISOString(),
+          tiles: message.total,
+          zooms: [11, 15]
+        }));
+      }
+      offlineMapDownloadRouteId = null;
+      offlineMapButton.classList.remove("downloading");
+      if (route === routeData[activeRouteIndex]) {
+        renderOfflineMapButton();
+        if (message.failed) offlineMapButton.querySelector("span").textContent = `${message.failed}개 실패 · 다시 시도`;
+      }
+    }
+  });
+}
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator) || !window.isSecureContext) return;
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(error => {
+      console.warn("Service worker registration failed:", error);
+    });
+  });
+}
+
 mapCurrentStep.addEventListener("click", () => {
   setMapStepSheetOpen(!isMapStepSheetOpen);
 });
@@ -1941,6 +2113,9 @@ function openPhotoDialog(image) {
 }
 
 initMap();
+setupInstallApp();
+setupOfflineMap();
+registerServiceWorker();
 buildTabs(routeTabs);
 buildTabs(mobileRouteTabs);
 buildFilters();

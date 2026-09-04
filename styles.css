@@ -86,8 +86,48 @@ body::before {
 
 .topbar > div {
   min-width: 0;
-  max-width: 100%;
+  max-width: calc(100% - 96px);
   overflow: hidden;
+}
+
+.install-app-button {
+  position: absolute;
+  top: calc(13px + env(safe-area-inset-top));
+  right: 0;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid rgba(33, 76, 63, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 252, 245, 0.9);
+  box-shadow: 0 5px 16px rgba(24, 33, 31, 0.08);
+  color: var(--pine);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.install-app-button svg,
+.offline-map-button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.install-app-button.install-ready {
+  border-color: var(--pine);
+  background: var(--pine);
+  color: #fff;
+}
+
+.install-app-button[hidden] {
+  display: none;
 }
 
 .eyebrow {
@@ -461,6 +501,112 @@ h3 {
 
 .map-legend[hidden] {
   display: none;
+}
+
+.offline-map-button {
+  position: absolute;
+  z-index: 700;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 40px;
+  max-width: calc(100% - 130px);
+  padding: 0 11px;
+  border: 1px solid rgba(24, 33, 31, 0.14);
+  border-radius: 10px;
+  background: rgba(255, 252, 245, 0.94);
+  box-shadow: 0 4px 14px rgba(24, 33, 31, 0.14);
+  color: var(--pine);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.offline-map-button.saved {
+  border-color: rgba(87, 165, 117, 0.4);
+  background: rgba(237, 247, 239, 0.95);
+  color: #287248;
+}
+
+.offline-map-button.downloading svg {
+  animation: offline-download-pulse 900ms ease-in-out infinite alternate;
+}
+
+.offline-map-button:disabled {
+  cursor: wait;
+  opacity: 0.88;
+}
+
+@keyframes offline-download-pulse {
+  to { transform: translateY(2px); opacity: 0.55; }
+}
+
+.install-app-dialog {
+  width: min(calc(100% - 32px), 420px);
+  padding: 28px;
+  border: 1px solid rgba(24, 33, 31, 0.12);
+  border-radius: 22px;
+  background: var(--panel);
+  box-shadow: 0 24px 70px rgba(24, 33, 31, 0.28);
+  color: var(--ink);
+}
+
+.install-app-dialog::backdrop {
+  background: rgba(18, 28, 25, 0.48);
+  backdrop-filter: blur(5px);
+}
+
+.install-app-dialog-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: var(--pine);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.install-app-dialog h2 {
+  margin-bottom: 12px;
+}
+
+.install-app-dialog > p:not(.eyebrow) {
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.install-app-dialog-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(33, 76, 63, 0.07);
+  color: var(--pine);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.install-app-dialog-confirm {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--pine);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .map-legend-item {
@@ -1276,6 +1422,18 @@ button:focus-visible,
     justify-content: space-between;
     min-height: 0;
     padding-right: 0;
+  }
+
+  .topbar > div {
+    max-width: calc(100% - 130px);
+  }
+
+  .install-app-button {
+    position: static;
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 13px;
   }
 
   .map-step-sheet {

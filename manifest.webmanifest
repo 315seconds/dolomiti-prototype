@@ -1,0 +1,26 @@
+{
+  "name": "Dolomiti Routebook",
+  "short_name": "Dolomiti",
+  "description": "돌로미티 트레킹 코스와 산장 정보를 확인하는 오프라인 루트북",
+  "lang": "ko",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f1",
+  "theme_color": "#214c3f",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

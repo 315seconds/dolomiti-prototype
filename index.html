@@ -125,7 +125,10 @@
             <h3>산장·포인트</h3>
           </div>
           <div class="poi-layout">
-            <img id="poiImage" alt="">
+            <button id="poiImageButton" class="poi-image-button" type="button" hidden>
+              <img id="poiImage" alt="" loading="lazy" decoding="async">
+              <span id="poiImageCaption" class="poi-image-caption"></span>
+            </button>
             <div id="poiList" class="poi-list"></div>
           </div>
           <button id="poiToggleButton" class="poi-toggle-button" type="button" hidden></button>

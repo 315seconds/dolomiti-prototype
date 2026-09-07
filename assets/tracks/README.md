@@ -9,7 +9,7 @@ Recommended naming:
 - `day-03-seceda.gpx`
 - `day-04-alpe-siusi.gpx`
 - `day-05-cinque-torri.gpx`
-- `day-06-tre-cime.gpx`
+- `day-07-tre-cime.gpx`
 
 Verified GPX files are configured as each route's default track and loaded automatically. The app does not expose manual upload or reset controls.
 
@@ -25,4 +25,5 @@ Built-in verified tracks currently included:
 - `day-04-alpe-siusi-hard.gpx` - Wild O’Williams 왕복 후 11번 버스 대신 Saltria와 Brunelle 사이 고원길을 걸어 Sporthotel Sonne로 복귀하는 도전 코스.
 - `day-05-cinque-torri-challenge.gpx` - Bai de Dones에서 Scoiattoli로 올라 Averau와 Nuvolau까지 왕복하는 도전 코스.
 - `day-05-scoiattoli-averau.gpx` - 5 Torri, Scoiattoli to Averau segment.
-- `day-06-tre-cime.gpx` - Trecime Trek, full Tre Cime di Lavaredo circuit.
+- `day-06-tre-cime.gpx` - 이전에 사용한 Trecime Trek 전체 순환 참고 트랙. 현재 앱에는 표시하지 않는다.
+- `day-07-tre-cime.gpx` - Outdooractive에서 직접 제작한 7일차 트랙. Auronzo → Lavaredo → Locatelli → 동굴 사진 포인트 왕복 → 랑암 산장 → 주차장 구간을 포함하며 현재 앱에서 사용한다.

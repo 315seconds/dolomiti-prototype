@@ -1217,11 +1217,34 @@ h3 {
   display: block;
 }
 
+.poi-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.poi-image-button[hidden] {
+  display: none;
+}
+
 .poi-layout img {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
+}
+
+.poi-image-caption {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .poi-layout img[hidden] {

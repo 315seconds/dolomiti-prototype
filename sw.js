@@ -1,4 +1,4 @@
-const STATIC_CACHE = "dolomiti-static-v6";
+const STATIC_CACHE = "dolomiti-static-v7";
 const MAP_CACHE = "dolomiti-opentopo-v1";
 const RUNTIME_CACHE = "dolomiti-runtime-v2";
 

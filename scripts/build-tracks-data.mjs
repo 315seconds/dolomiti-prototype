@@ -39,8 +39,8 @@ const trackConfigs = [
   },
   {
     key: "treCime",
-    file: "day-06-tre-cime.gpx",
-    source: "Trecime Trek · Tre Cime di Lavaredo circuit"
+    file: "day-07-tre-cime.gpx",
+    source: "Outdooractive · 사용자 제작 · 7 day"
   }
 ];
 

@@ -123,6 +123,30 @@ const poiPhotos = {
   rifugioNuvolau: {
     src: "assets/poi/day6-rifugio-nuvolau.jpg",
     alt: "리푸지오 누볼라우 산장"
+  },
+  rifugioAuronzo: {
+    src: "assets/poi/day7-rifugio-auronzo.jpg",
+    alt: "트레치메 트레킹 출발 지점의 아우론조 산장"
+  },
+  rifugioLavaredo: {
+    src: "assets/poi/day7-rifugio-lavaredo.jpg",
+    alt: "트레치메 동쪽의 라바레도 산장"
+  },
+  rifugioLocatelli: {
+    src: "assets/poi/day7-rifugio-locatelli.jpg",
+    alt: "트레치메 전망이 보이는 로카텔리 산장"
+  },
+  treCimeCaveViewpoint: {
+    src: "assets/poi/day7-cave-viewpoint.jpg",
+    alt: "동굴 안에서 트레치메 암봉을 바라보는 사진 포인트"
+  },
+  langalm: {
+    src: "assets/poi/day7-langalm.jpg",
+    alt: "트레치메 순환 코스의 랑암 산장"
+  },
+  treCimeParking: {
+    src: "assets/poi/day7-tre-cime-parking.jpg",
+    alt: "트레치메 산군 아래의 버스 탑승 주차장"
   }
 };
 
@@ -771,6 +795,9 @@ const routeData = [
     center: [46.5055, 12.0435],
     zoom: 14,
     weather: { name: "Rifugio Nuvolau", coords: [46.495271, 12.045541] },
+    poiImage: "assets/poi/day6-cinque-torri-massif.jpg",
+    poiImageAlt: "푸른 하늘 아래 솟아 있는 친퀘토리 암봉",
+    poiImageCaption: "오늘의 주요 산군 · 친퀘토리",
     trackFiles: {
       challenge: "assets/tracks/day-05-cinque-torri-challenge.gpx"
     },
@@ -893,87 +920,124 @@ const routeData = [
     day: "7일차",
     title: "트레치메 디 라바레도",
     backgroundImage: "assets/06-tre-cime-map.jpg",
-    summary: "Auronzo 산장에서 Lavaredo, Locatelli, 동굴 포토존, Langalm 방향을 지나 101·105 코스로 순환합니다.",
+    summary: "1번 지점에서 출발해 Auronzo, Lavaredo, Locatelli와 동굴 사진 포인트를 거쳐 랑암 산장과 7번 주차장으로 이어지는 순환 코스입니다.",
     center: [46.6256, 12.3032],
     zoom: 13,
+    trailKm: 10.3,
     weather: { name: "Rifugio Locatelli", coords: [46.636902, 12.31056] },
-    poiImage: "assets/tre-cime-poi.jpg",
-    trackFile: "assets/tracks/day-06-tre-cime.gpx",
-    trackSource: "Trecime Trek · Tre Cime di Lavaredo circuit",
+    poiImage: "assets/poi/day7-tre-cime-massif.jpg",
+    poiImageAlt: "동굴 바깥으로 보이는 트레치메의 세 암봉",
+    poiImageCaption: "오늘의 주요 산군 · 트레치메",
+    trackFile: "assets/tracks/day-07-tre-cime.gpx",
+    trackSource: "Outdooractive · 사용자 제작 · 7 day",
+    mapHiddenPoiIndices: [7],
     pois: [
-      ["Tre Cime Parking", "주차장/정류장", [46.612057, 12.294137]],
-      ["Rifugio Auronzo", "출발/도착", [46.6128, 12.2925]],
-      ["Cappella degli Alpini", "예배당", [46.6154, 12.3029]],
-      ["Rifugio Lavaredo", "101코스 산장", [46.61854, 12.31183]],
-      ["Forcella Lavaredo", "고개", [46.6232, 12.3154]],
-      ["Rifugio Locatelli", "점심/조망", [46.636902, 12.31056]],
-      ["동굴 포토존", "사진 포인트", [46.629187, 12.311317]],
-      ["Laghi dei Piani", "Locatelli 인근 호수", [46.6382, 12.3043]],
-      ["Langalm", "105코스 복귀", [46.6234, 12.2821]]
+      ["트레킹 시작 지점", "버스 하차 후 트레킹 시작", [46.612259, 12.294027]],
+      ["Rifugio Auronzo", "아우론조 산장", [46.612344, 12.296085], poiPhotos.rifugioAuronzo],
+      ["Rifugio Lavaredo", "라바레도 산장", [46.618477, 12.312003], poiPhotos.rifugioLavaredo],
+      ["Rifugio Locatelli", "집결 및 자유 점심 지점", [46.636829, 12.310746], poiPhotos.rifugioLocatelli],
+      ["동굴 사진 포인트", "팀별 사진 촬영", [46.638169, 12.309249], poiPhotos.treCimeCaveViewpoint],
+      ["랑암 산장", "트레치메 순환 코스 산장", [46.625585, 12.289932], poiPhotos.langalm],
+      ["Tre Cime Parking", "우리 버스 탑승 주차장", [46.612714, 12.292744], poiPhotos.treCimeParking],
+      ["Lago di Misurina", "짧게 둘러보는 미주리나 호수", [46.5824, 12.2537]]
     ],
     steps: [
       {
-        title: "주차장 → Auronzo",
-        mode: "trail",
-        meta: "접근 · 출발점",
-        note: "셔틀/차량 도착 후 Auronzo 산장 앞에서 루프를 시작합니다.",
-        coords: [[46.612057, 12.294137], [46.6128, 12.2925]]
+        range: "출발 · 버스",
+        title: "숙소 → 1번 지점",
+        mode: "bus",
+        meta: "버스 이동 · 트레킹 시작",
+        note: "숙소에서 우리 버스를 타고 이동해 1번 지점에서 내립니다.",
+        mapHidden: true,
+        coords: [[46.4309, 11.6934], [46.612259, 12.294027]]
       },
       {
-        title: "Auronzo → 예배당",
+        range: "1→2",
+        title: "1번 지점 → Rifugio Auronzo",
         mode: "trail",
-        meta: "101코스 · 초반 산책로",
-        note: "Auronzo 산장에서 완만한 길을 따라 예배당 방향으로 갑니다.",
-        coords: [[46.6128, 12.2925], [46.6154, 12.3029]]
+        meta: "트레킹 · 아우론조 산장",
+        note: "버스 하차 지점에서 출발해 2번 아우론조 산장을 지납니다.",
+        distanceKm: 0.28,
+        trackRange: [0, 24],
+        coords: [[46.612259, 12.294027], [46.612344, 12.296085]]
       },
       {
-        title: "예배당 → Lavaredo",
+        range: "2→3",
+        title: "Rifugio Auronzo → Rifugio Lavaredo",
         mode: "trail",
-        meta: "101코스 · 완만한 시작",
-        note: "Auronzo 산장에서 Lavaredo 산장까지 이어지는 초반 구간입니다.",
-        coords: [[46.6154, 12.3029], [46.61854, 12.31183]]
+        meta: "트레킹 · 라바레도 산장",
+        note: "아우론조 산장을 지나 3번 라바레도 산장으로 갑니다.",
+        distanceKm: 1.72,
+        trackRange: [24, 153],
+        coords: [[46.612344, 12.296085], [46.618477, 12.312003]]
       },
       {
-        title: "Lavaredo → Forcella Lavaredo",
+        range: "3→4",
+        title: "Rifugio Lavaredo → Rifugio Locatelli",
         mode: "trail",
-        meta: "101코스 · 고개",
-        note: "트레치메 동쪽 고개로 올라 Locatelli 방향 조망이 열립니다.",
-        coords: [[46.61854, 12.31183], [46.6232, 12.3154]]
+        meta: "트레킹 · 로카텔리 산장 집결",
+        note: "라바레도 산장에서 4번 로카텔리 산장까지 이동해 일행과 모입니다.",
+        distanceKm: 2.75,
+        trackRange: [153, 381],
+        coords: [[46.618477, 12.312003], [46.636829, 12.310746]]
       },
       {
-        title: "Forcella → Locatelli",
+        range: "4→5",
+        title: "Rifugio Locatelli → 동굴 사진 포인트",
         mode: "trail",
-        meta: "101코스 · 산장 도착",
-        note: "Locatelli 산장까지 가는 대표 전망 구간입니다.",
-        coords: [[46.6232, 12.3154], [46.6291, 12.3136], [46.636902, 12.31056]]
+        meta: "짧은 이동 · 팀별 사진 촬영",
+        note: "로카텔리 산장에서 5번 동굴 사진 포인트로 넘어가 팀별로 사진을 촬영합니다.",
+        distanceKm: 0.22,
+        trackRange: [381, 423],
+        coords: [[46.636829, 12.310746], [46.638169, 12.309249]]
       },
       {
-        title: "Locatelli → Laghi dei Piani",
+        range: "5→4",
+        title: "동굴 사진 포인트 → Rifugio Locatelli",
         mode: "trail",
-        meta: "식사/조망 · 짧은 분기",
-        note: "Locatelli 산장 주변의 호수 조망을 확인하는 짧은 분기입니다.",
-        coords: [[46.636902, 12.31056], [46.6382, 12.3043]]
+        meta: "복귀 · 자유 점심",
+        note: "사진 촬영 후 4번 로카텔리 산장으로 돌아와 각자 점심을 해결합니다.",
+        distanceKm: 0.22,
+        trackRange: [423, 465],
+        coords: [[46.638169, 12.309249], [46.636829, 12.310746]]
       },
       {
-        title: "Locatelli → 동굴 포토존",
+        range: "4→6",
+        title: "Rifugio Locatelli → 랑암 산장",
         mode: "trail",
-        meta: "사진 포인트 · 짧은 이동",
-        note: "트레치메 암봉을 프레임처럼 담는 사진 포인트를 찍습니다.",
-        coords: [[46.6382, 12.3043], [46.636902, 12.31056], [46.629187, 12.311317]]
+        meta: "트레킹 · 랑암 산장",
+        note: "점심 후 순환 코스 복귀 구간을 따라 6번 랑암 산장까지 이동합니다.",
+        distanceKm: 2.97,
+        trackRange: [465, 706],
+        coords: [[46.636829, 12.310746], [46.625585, 12.289932]]
       },
       {
-        title: "동굴 포토존 → Langalm",
+        range: "6→7",
+        title: "랑암 산장 → Tre Cime Parking",
         mode: "trail",
-        meta: "105코스 · 복귀 시작",
-        note: "북서쪽으로 크게 돌아 Langalm 방향으로 내려갑니다.",
-        coords: [[46.629187, 12.311317], [46.6324, 12.299], [46.6279, 12.2874], [46.6234, 12.2821]]
+        meta: "트레킹 · 주차장 도착",
+        note: "랑암 산장에서 7번 주차장으로 내려가 우리 버스에 탑승합니다.",
+        distanceKm: 2.16,
+        trackRange: [706, 882],
+        coords: [[46.625585, 12.289932], [46.612714, 12.292744]]
       },
       {
-        title: "Langalm → Auronzo",
-        mode: "trail",
-        meta: "105코스 · 루프 완료",
-        note: "남쪽 사면을 돌아 Auronzo 산장과 주차장 방향으로 복귀합니다.",
-        coords: [[46.6234, 12.2821], [46.6164, 12.2849], [46.6128, 12.2925]]
+        range: "이후 · 버스",
+        title: "Tre Cime Parking → Lago di Misurina",
+        mode: "bus",
+        meta: "버스 이동 · 호수 관광",
+        note: "7번 주차장에서 우리 버스를 타고 미주리나 호수로 이동해 짧게 둘러봅니다.",
+        mapHidden: true,
+        coords: [[46.612714, 12.292744], [46.5824, 12.2537]]
+      },
+      {
+        range: "마무리 · 버스",
+        title: "Lago di Misurina → 숙소",
+        mode: "bus",
+        meta: "버스 이동 · 일정 종료",
+        note: "미주리나 호수를 둘러본 뒤 버스를 타고 숙소로 복귀합니다.",
+        mapHidden: true,
+        coords: [[46.5824, 12.2537], [46.4309, 11.6934]]
       }
     ]
   }
@@ -1005,7 +1069,9 @@ const routeSummary = document.querySelector("#routeSummary");
 const stepList = document.querySelector("#stepList");
 const layerFilters = document.querySelector("#layerFilters");
 const poiSection = document.querySelector("#poiSection");
+const poiImageButton = document.querySelector("#poiImageButton");
 const poiImage = document.querySelector("#poiImage");
+const poiImageCaption = document.querySelector("#poiImageCaption");
 const poiList = document.querySelector("#poiList");
 const poiToggleButton = document.querySelector("#poiToggleButton");
 const photoCredits = document.querySelector("#photoCredits");
@@ -1206,7 +1272,7 @@ function renderSummary(route) {
     ? configuredTrailKm
     : steps
       .filter(step => step.mode === "trail")
-      .reduce((sum, step) => sum + stepDistanceKm(step.coords), 0);
+      .reduce((sum, step) => sum + getStepDistanceKm(step), 0);
   const flowModes = steps.reduce((modes, step) => {
     if (modes.at(-1) !== step.mode) modes.push(step.mode);
     return modes;
@@ -1446,7 +1512,7 @@ function renderSteps() {
     });
 
     const stepLabel = step.variantRange?.[getActiveVariantId(route)] || step.range || `${index + 1}`;
-    const km = stepDistanceKm(step.coords);
+    const km = getStepDistanceKm(step);
     const distanceLabel = step.mode === "trail" ? `<span class="step-distance">${km.toFixed(1)}km</span>` : "";
     item.innerHTML = `
       <span class="step-index">${stepLabel}</span>
@@ -1473,10 +1539,11 @@ function renderPois() {
 
   poiSection.hidden = false;
   poiSection.querySelector(".poi-layout").classList.toggle("no-image", !route.poiImage);
-  poiImage.hidden = !route.poiImage;
+  poiImageButton.hidden = !route.poiImage;
   if (route.poiImage) {
     poiImage.src = route.poiImage;
-    poiImage.alt = `${route.title} 산장과 주요 포인트`;
+    poiImage.alt = route.poiImageAlt || `${route.title} 주요 산군`;
+    poiImageCaption.textContent = route.poiImageCaption || route.title;
   }
   poiList.innerHTML = "";
   const poiIndices = getMapPoiIndices(route);
@@ -1539,7 +1606,7 @@ function updateCurrentStep() {
   const step = getActiveStep();
   const stepLabel = step.variantRange?.[getActiveVariantId(route)] || step.range || `${activeStepIndex + 1}`;
   const stepMetric = step.mode === "trail"
-    ? `${labels[step.mode]} · ${stepDistanceKm(step.coords).toFixed(1)}km`
+    ? `${labels[step.mode]} · ${getStepDistanceKm(step).toFixed(1)}km`
     : `${labels[step.mode]} · ${step.meta.split(" · ")[0]}`;
   currentStepTitle.textContent = step.title;
   currentStepMeta.textContent = step.meta;
@@ -1565,7 +1632,7 @@ function renderMapStepSheet() {
   visibleSteps.forEach(({ step }, index) => {
     const stepLabel = step.variantRange?.[getActiveVariantId(route)] || step.range || `${index + 1}`;
     const metric = step.mode === "trail"
-      ? `${step.meta} · ${stepDistanceKm(step.coords).toFixed(1)}km`
+      ? `${step.meta} · ${getStepDistanceKm(step).toFixed(1)}km`
       : step.meta;
     const listItem = document.createElement("li");
     const button = document.createElement("button");
@@ -1618,6 +1685,10 @@ function stepDistanceKm(coords) {
     total += distance(coords[i], coords[i + 1]);
   }
   return total;
+}
+
+function getStepDistanceKm(step) {
+  return Number.isFinite(step.distanceKm) ? step.distanceKm : stepDistanceKm(step.coords);
 }
 
 async function loadWeather(route) {
@@ -2089,6 +2160,8 @@ mapCurrentStep.addEventListener("click", () => {
 previousStepButton.addEventListener("click", () => selectAdjacentStep(-1));
 nextStepButton.addEventListener("click", () => selectAdjacentStep(1));
 closeMapStepSheet.addEventListener("click", () => setMapStepSheetOpen(false));
+
+poiImageButton.addEventListener("click", () => openPhotoDialog(poiImage));
 
 poiToggleButton.addEventListener("click", () => {
   const routeId = routeData[activeRouteIndex].id;

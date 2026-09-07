@@ -71,7 +71,7 @@ assets/tracks/day-01-rosengarten.gpx
 assets/tracks/day-01-rosengarten.kml
 assets/tracks/day-02-alba-viel-sass-pordoi.gpx
 assets/tracks/day-05-cinque-torri-challenge.gpx
-assets/tracks/day-06-tre-cime.gpx
+assets/tracks/day-07-tre-cime.gpx
 ```
 
 `tracks-data.js`에는 일부 GPX 좌표를 내장해두었다. 파일 직접 열기 또는 fetch 실패 상황에서도 트랙이 보이게 하려는 fallback이다.
@@ -220,29 +220,33 @@ day-05-scoiattoli-averau.gpx
 
 이 GPX는 전체 Day 5가 아니라 `Scoiattoli → Averau` 일부 구간이다.
 
-### Day 6 트레치메
+### Day 7 트레치메
 
-Tre Cime 전체 루프 GPX가 들어가 있다.
+사용자가 Outdooractive에서 직접 제작한 7일차 GPX를 기준으로 실제 일정과 주요 지점을 연결했다.
 
 주요 구간:
 
 ```text
-주차장 → Auronzo
-Auronzo → 예배당
-예배당 → Lavaredo
-Lavaredo → Forcella Lavaredo
-Forcella → Locatelli
-Locatelli → Laghi dei Piani
-Locatelli → 동굴 포토존
-동굴 포토존 → Langalm
-Langalm → Auronzo
+숙소 → 1번 지점 버스 하차
+1 → 2 Auronzo
+2 → 3 Lavaredo
+3 → 4 Locatelli 집결
+4 → 5 동굴 사진 포인트
+5 → 4 Locatelli 복귀 및 자유 점심
+4 → 6 랑암 산장
+6 → 7 주차장
+7 → 미주리나 호수 → 숙소
 ```
 
 내장 GPX:
 
 ```text
-day-06-tre-cime.gpx
+day-07-tre-cime.gpx
 ```
+
+- 트랙은 883개 포인트, 약 10.3km다.
+- 기존 G와 I는 같은 Locatelli 산장 좌표이므로 지도에서는 4번 마커 하나로 표시하고 `4→5→4`로 왕복한다.
+- 숙소 이동과 미주리나 호수 방문은 일정에는 포함하지만 트레킹 지도 선에서는 제외한다.
 
 ## 날씨 기능
 
@@ -290,7 +294,7 @@ Day 2 Rifugio Viel dal Pan
 Day 3 Seceda
 Day 4 Mont Seuc
 Day 5 Rifugio Scoiattoli
-Day 6 Rifugio Locatelli
+Day 7 Rifugio Locatelli
 ```
 
 표시 항목:
